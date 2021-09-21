@@ -8,7 +8,8 @@ html
         input(type="text" placeholder="Search on Two Left Thumbs...")
         .nav_links
           if locals.authenticated
-            a.nav_logout(href='/users/logout') Logout
+            form(action='/users/logout' method='post')
+              button.nav_logout Logout
           else
             a.nav_login(href='/users/login') Log In
             a.nav_signup(href='/users/register') Sign Up

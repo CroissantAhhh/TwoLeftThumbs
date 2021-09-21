@@ -73,7 +73,6 @@ router.post(
 
     if (validatorErrors.isEmpty()) {
       const user = await db.User.findOne({ where: { email } });
-      console.log(req, req.session);
 
       if (user !== null) {
         const passwordMatch = await bcrypt.compare(
