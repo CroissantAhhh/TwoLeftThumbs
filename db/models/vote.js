@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER,
 			},
 			answerId: {
-				allowNull: false,
 				type: DataTypes.INTEGER,
 			},
 			userId: {
@@ -16,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER,
 			},
 			questionId: {
-				allowNull: false,
 				type: DataTypes.INTEGER,
 			},
 		},
