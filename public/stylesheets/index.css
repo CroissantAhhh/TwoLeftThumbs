@@ -2,7 +2,7 @@
 }
 
 body {
-  background-color: lightsteelblue;
+  background-color: rgb(219, 220, 221);
 }
 
 nav {
@@ -18,17 +18,17 @@ nav {
 
 nav a {
   color: white;
-  text-decoration: none
+  text-decoration: none;
 }
 
 nav input {
-  background-color: lightgray;
+  background-color: rgba(255, 255, 255, 0.787);
   width: 70%;
   height: 30px;
   border-radius: 8px;
 }
 
-.nav-links {
+.nav_links {
   display: flex;
   width: 10%;
   align-items: center;
@@ -36,11 +36,19 @@ nav input {
   justify-content: space-evenly;
 }
 
-.nav-links a {
+.nav_links a {
   display: inline-flex;
   width: 45%;
   height: 30px;
   justify-content: center;
   align-items: center;
+}
+
+.nav_login {
+  background-color: white;
+  color: lightseagreen;
+}
+
+.nav_signup {
   background-color: lightseagreen;
 }

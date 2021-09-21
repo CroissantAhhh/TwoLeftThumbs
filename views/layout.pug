@@ -3,10 +3,10 @@ html
   body
     head
     link(rel='stylesheet' href='/stylesheets/index.css')
-    nav(id=nav)
+    nav
       a.navbar.brand(href='/') Two Left Thumbs
-      input(type="text")
-      .nav-links
-        a.navbar.login(href='/users/login') Log in
-        a.navbar.signup(href='/users/register') Sign Up
+      input(type="text" placeholder="Search on Two Left Thumbs...")
+      .nav_links
+        a.nav_login(href='/users/login') Log in
+        a.nav_signup(href='/users/register') Sign Up
   block content
