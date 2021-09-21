@@ -1,10 +1,11 @@
-const csrf = require('csurf');
+const csrf = require("csurf");
 
 const csrfProtection = csrf({ cookie: true });
 const { check } = require("express-validator");
 const db = require("../db/models");
 
-const asyncHandler = (handler) => (req, res, next) => handler(req, res, next).catch(next);
+const asyncHandler = (handler) => (req, res, next) =>
+  handler(req, res, next).catch(next);
 
 const loginValidators = [
   check("email")
@@ -16,19 +17,19 @@ const loginValidators = [
 ];
 
 const questionValidators = [
-    check("title")
-      .exists({ checkFalsy: true })
-      .withMessage("Please provide a value for Title"),
-    check("body")
-      .exists({ checkFalsy: true })
-      .withMessage("Please provide a value for Body"),
+  check("title")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a value for Title"),
+  check("body")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a value for Body"),
 ];
 
 const answerValidators = [
   check("body")
-  .exists({ checkFalsy: true})
-  .withMessage("Please provide a value for Body")
-]
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a value for Body"),
+];
 
 const userValidators = [
   check("userName")
@@ -80,5 +81,5 @@ module.exports = {
   loginValidators,
   userValidators,
   questionValidators,
-  answerValidators
+  answerValidators,
 };
