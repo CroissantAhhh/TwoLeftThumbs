@@ -1,0 +1,6 @@
+extends layout.pug
+
+block content
+    ul
+        each question in questions
+            li= `${question.title}`
