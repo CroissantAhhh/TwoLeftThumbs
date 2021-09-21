@@ -1,13 +1,13 @@
 const express = require("express");
 const { check, validationResult } = require("express-validator");
-const { csrfProtection, asyncHandler } = require("../utils");
+const { csrfProtection, asyncHandler } = require("./utils");
 const { requireAuth } = require("../auth");
 const router = express.Router();
 const db = require("../db/models");
 
 // check permissions helper middleware
-const checkPermissions = (question, currentUser) => {
-	if (question.userId !== currentUser.id) {
+const checkPermissions = (question, currentUserId) => {
+	if (question.userId !== currentUserId) {
 		const err = new Error("Illegal operation.");
 		err.status = 403; // Forbidden
 		throw err;
@@ -25,7 +25,7 @@ router.get(
 );
 
 // get add question page
-router.get("/question/add", requireAuth, csrfProtection, (req, res) => {
+router.get("/add", requireAuth, csrfProtection, (req, res) => {
 	const question = db.Question.build();
 	res.render("question-add", {
 		title: "Add Question",
@@ -45,7 +45,7 @@ const questionValidators = [
 
 // post a new question
 router.post(
-	"/question/add",
+	"/",
 	requireAuth,
 	csrfProtection,
 	questionValidators,
@@ -53,7 +53,7 @@ router.post(
 		const { title, body } = req.body;
 
 		const question = db.Question.build({
-			userId: res.session.user.id,
+			userId: req.session.auth.userId,
 			title,
 			body,
 		});
@@ -75,16 +75,26 @@ router.post(
 	})
 );
 
+// get specific question info
+router.get(
+	"/:id(\\d+)",
+	asyncHandler(async (req, res) => {
+		const questionId = parseInt(req.params.id, 10);
+		const question = await db.Question.findByPk(questionId);
+		res.render("question", { question });
+	})
+);
+
 // get question edit page
 router.get(
-	"/question/edit/:id(\\d+)",
+	"/edit/:id(\\d+)",
 	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
 		const questionId = parseInt(req.params.id, 10);
 		const question = await db.Question.findByPk(questionId);
 
-		checkPermissions(question, res.session.user);
+		checkPermissions(question, req.session.auth.userId);
 
 		res.render("question-edit", {
 			title: "Edit Question",
@@ -96,7 +106,7 @@ router.get(
 
 // post question edit
 router.post(
-	"/question/edit/:id(\\d+)",
+	"/edit/:id(\\d+)",
 	requireAuth,
 	csrfProtection,
 	questionValidators,
@@ -104,7 +114,7 @@ router.post(
 		const questionId = parseInt(req.params.id, 10);
 		const questionToUpdate = await db.Question.findByPk(questionId);
 
-		checkPermissions(question, res.session.user);
+		checkPermissions(questionToUpdate, req.session.auth.userId);
 
 		const { title, body } = req.body;
 
@@ -132,14 +142,14 @@ router.post(
 
 // get delete question page
 router.get(
-	"/question/delete/:id(\\d+)",
+	"/delete/:id(\\d+)",
 	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
 		const questionId = parseInt(req.params.id, 10);
 		const question = await db.Question.findByPk(questionId);
 
-		checkPermissions(question, res.session.user);
+		checkPermissions(question, req.session.auth.userId);
 
 		res.render("question-delete", {
 			title: "Delete Question",
@@ -151,19 +161,18 @@ router.get(
 
 // post question delete
 router.post(
-	"/question/delete/:id(\\d+)",
+	"/delete/:id(\\d+)",
 	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
 		const questionId = parseInt(req.params.id, 10);
 		const question = await db.Question.findByPk(questionId);
 
-		checkPermissions(question, res.session.user);
+		checkPermissions(question, req.session.auth.userId);
 
 		await question.destroy();
 		res.redirect("/");
 	})
 );
-
 
 module.exports = router;
