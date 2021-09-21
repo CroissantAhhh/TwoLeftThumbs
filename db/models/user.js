@@ -33,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
 			as: "votes",
 			foreignKey: "userId",
 		});
+
 	};
 	return User;
 };
