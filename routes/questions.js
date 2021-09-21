@@ -53,7 +53,7 @@ router.post(
 		const { title, body } = req.body;
 
 		const question = db.Question.build({
-			userId: res.locals.user.id,
+			userId: res.session.user.id,
 			title,
 			body,
 		});
@@ -84,7 +84,7 @@ router.get(
 		const questionId = parseInt(req.params.id, 10);
 		const question = await db.Question.findByPk(questionId);
 
-		checkPermissions(question, res.locals.user);
+		checkPermissions(question, res.session.user);
 
 		res.render("question-edit", {
 			title: "Edit Question",
@@ -104,7 +104,7 @@ router.post(
 		const questionId = parseInt(req.params.id, 10);
 		const questionToUpdate = await db.Question.findByPk(questionId);
 
-		checkPermissions(question, res.locals.user);
+		checkPermissions(question, res.session.user);
 
 		const { title, body } = req.body;
 
@@ -139,7 +139,7 @@ router.get(
 		const questionId = parseInt(req.params.id, 10);
 		const question = await db.Question.findByPk(questionId);
 
-		checkPermissions(question, res.locals.user);
+		checkPermissions(question, res.session.user);
 
 		res.render("question-delete", {
 			title: "Delete Question",
@@ -158,7 +158,7 @@ router.post(
 		const questionId = parseInt(req.params.id, 10);
 		const question = await db.Question.findByPk(questionId);
 
-		checkPermissions(question, res.locals.user);
+		checkPermissions(question, res.session.user);
 
 		await question.destroy();
 		res.redirect("/");
