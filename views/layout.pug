@@ -7,12 +7,9 @@ html
         span(class='navbar-toggler-icon')
       div(class='collapse navbar-collapse' id='navbarText')
         ul(class='navbar-nav mr-auto')
-          //- Empty menu keeps the content that follows the
-          //- unordered list correctly positioned on the
-          //- right side of the navbar.
         if locals.authenticated
           span(class='navbar-text px-4') Welcome #{user.userName}!
-          form(class='form-inline pr-4' action='/user/logout' method='post')
+          form(class='form-inline pr-4' action='/users/logout' method='post')
             button(class='btn btn-sm btn-warning' type='submit') Logout
         else
           span(class='navbar-text px-4')
