@@ -8,4 +8,5 @@ block content
     form(action=`/questions/delete/${question.id}` method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
       button(class='btn btn-danger' type='submit') Delete Question
-      a(class='btn btn-warning ml-2' href='/' role='button') Cancel
+    form(action=`/` method='get')
+      button(class='btn btn-danger' type='submit') Cancel
