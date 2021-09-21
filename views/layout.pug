@@ -1,24 +1,12 @@
 doctype html
 html
-  head
-    nav(class='navbar navbar-expand-lg navbar-dark bg-primary')
-      a(class='navbar-brand' href='/') Two Left Thumbs
-      button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation')
-        span(class='navbar-toggler-icon')
-      div(class='collapse navbar-collapse' id='navbarText')
-        ul(class='navbar-nav mr-auto')
-        if locals.authenticated
-          span(class='navbar-text px-4') Welcome #{user.userName}!
-          form(class='form-inline pr-4' action='/users/logout' method='post')
-            button(class='btn btn-sm btn-warning' type='submit') Logout
-        else
-          span(class='navbar-text px-4')
-            a(class='btn btn-sm btn-dark mr-2' href='/users/login') Login
-            a(class='btn btn-sm btn-dark' href='/users/register') Register
-    .container
-      h2(class='py-4') #{title}
-      block head
-        title="Two Left Thumbs"
-        //- link(rel='stylesheet' href='/stylesheets/reset.css')
   body
-    block content
+    head
+    link(rel='stylesheet' href='/stylesheets/index.css')
+    nav
+      a.navbar.brand(href='/') Two Left Thumbs
+      input(type="text" placeholder="Search on Two Left Thumbs...")
+      .nav_links
+        a.nav_login(href='/users/login') Log in
+        a.nav_signup(href='/users/register') Sign Up
+  block content
