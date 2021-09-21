@@ -15,6 +15,15 @@ const loginValidators = [
     .withMessage("Please provide a value for Password"),
 ];
 
+const questionValidators = [
+    check("title")
+      .exists({ checkFalsy: true })
+      .withMessage("Please provide a value for Title"),
+    check("body")
+      .exists({ checkFalsy: true })
+      .withMessage("Please provide a value for Body"),
+];
+
 const userValidators = [
   check("userName")
     .exists({ checkFalsy: true })
@@ -63,5 +72,6 @@ module.exports = {
   csrfProtection,
   asyncHandler,
   loginValidators,
-  userValidators
+  userValidators,
+  questionValidators
 };
