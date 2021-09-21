@@ -1,4 +1,4 @@
-include layout.pug
+extends layout.pug
 
 include utils.pug
 
@@ -10,4 +10,5 @@ block content
     +field('Body', 'body', question.body)
     div(class='py-4')
       button(type='submit' class='btn btn-primary') Edit Question
-      a(href=`/questions/${question.id}` class='btn btn-warning ml-2') Cancel
+  form(action=`/` method='get')
+    button(class='btn btn-danger' type='submit') Cancel
