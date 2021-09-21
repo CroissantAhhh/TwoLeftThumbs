@@ -4,9 +4,5 @@ block content
     ul
         each question in questions
             li= `${question.title}`
-            form(action=`/questions/edit/${question.id}` method='get')
-                button(class='btn btn-danger' type='submit') Edit Question
-            form(action=`/questions/delete/${question.id}` method='get')
-                button(class='btn btn-danger' type='submit') Delete Question
-            form(action=`/` method='get')
-                button(class='btn btn-danger' type='submit') Cancel
+            form(action=`/questions/${question.id}` method='get')
+                button(class='btn btn-danger' type='submit') View Question
