@@ -3,8 +3,11 @@ module.exports = (sequelize, DataTypes) => {
 	const Vote = sequelize.define(
 		"Vote",
 		{
-			answerId: {
+			dir: {
 				allowNull: false,
+				type: DataTypes.INTEGER,
+			},
+			answerId: {
 				type: DataTypes.INTEGER,
 			},
 			userId: {
@@ -12,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER,
 			},
 			questionId: {
-				allowNull: false,
 				type: DataTypes.INTEGER,
 			},
 		},

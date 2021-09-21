@@ -8,8 +8,11 @@ module.exports = {
 				primaryKey: true,
 				type: Sequelize.INTEGER,
 			},
-			answerId: {
+			dir: {
 				allowNull: false,
+				type: Sequelize.INTEGER,
+			},
+			answerId: {
 				type: Sequelize.INTEGER,
 				references: {
 					model: "Answers",
@@ -23,7 +26,6 @@ module.exports = {
 				},
 			},
 			questionId: {
-				allowNull: false,
 				type: Sequelize.INTEGER,
 				references: {
 					model: "Questions",
