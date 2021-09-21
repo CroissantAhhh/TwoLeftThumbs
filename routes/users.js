@@ -13,7 +13,6 @@ const {
 
 const router = express.Router();
 
-
 router.get("/register", csrfProtection, (req, res) => {
   const user = db.User.build();
   res.render("user-register", {
@@ -41,6 +40,7 @@ router.post(
       const hashedPassword = await bcrypt.hash(password, 10);
       user.hashedPassword = hashedPassword;
       await user.save();
+      loginUser(req, res, user);
       res.redirect("/");
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);

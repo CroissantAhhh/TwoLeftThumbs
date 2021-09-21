@@ -14,7 +14,6 @@ const { restoreUser } = require("./auth");
 
 const app = express();
 
-
 app.set("view engine", "pug");
 
 app.use(logger("dev"));
@@ -23,14 +22,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(sessionSecret));
 app.use(express.static(path.join(__dirname, "public")));
 
-
 const store = new SequelizeStore({ db: sequelize });
 app.use(
   session({
     secret: sessionSecret,
     store,
     saveUninitialized: false,
-    resave: false,
+    resave: true,
   })
 );
 store.sync();
@@ -38,14 +36,11 @@ app.use(restoreUser);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
-
 app.use(function (err, req, res, next) {
-	
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
