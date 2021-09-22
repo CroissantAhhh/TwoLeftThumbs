@@ -43,6 +43,9 @@ const questionValidators = [
 		.withMessage("Please provide a value for Title")
 		.isLength({ max: 255 })
 		.withMessage("Title must not be more than 255 characters long"),
+    check("body")
+		.exists({ checkFalsy: true })
+		.withMessage("Please provide a value for Body")
 ];
 
 // post a new question
@@ -64,12 +67,12 @@ router.post(
 
 		if (validatorErrors.isEmpty()) {
 			await question.save();
-			res.redirect("/");
+			res.status(201).json();
 		} else {
 			const errors = validatorErrors.array().map((error) => error.msg);
-			res.render("question-add", {
-				title: "Add Question",
-				question,
+			res.status(401).json("question-add", {
+				title,
+                body,
 				errors,
 				csrfToken: req.csrfToken(),
 			});
@@ -89,7 +92,7 @@ router.get(
 
 // get question edit page
 router.get(
-	"/edit/:id(\\d+)",
+	"/:id(\\d+)/edit",
 	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
@@ -129,12 +132,12 @@ router.put(
 
 		if (validatorErrors.isEmpty()) {
 			await questionToUpdate.update(question);
-			res.redirect("/");
+			res.status(200).json();
 		} else {
 			const errors = validatorErrors.array().map((error) => error.msg);
-			res.render("question-edit", {
-				title: "Edit Question",
-				question: { ...question, questionId },
+			res.status(401).json({
+				title,
+                body,
 				errors,
 				csrfToken: req.csrfToken(),
 			});
@@ -144,7 +147,7 @@ router.put(
 
 // get delete question page
 router.get(
-	"/delete/:id(\\d+)",
+	"/:id(\\d+)/delete",
 	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
@@ -173,7 +176,7 @@ router.delete(
 		checkPermissions(question, req.session.auth.userId);
 
 		await question.destroy();
-		res.redirect("/");
+		res.status(200).json();
 	})
 );
 
