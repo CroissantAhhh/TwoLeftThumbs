@@ -3,12 +3,13 @@ extends layout.pug
 include utils.pug
 
 block content
-  +validationErrorSummary(errors)
-  form(action=`/questions/edit/${question.id}` method='post')
+  div.errors_container
+  form.edit_question(action=`/questions/${question.id}` method='post')
     input(type='hidden' name='_csrf' value=csrfToken)
     +field('Title', 'title', question.title)
-    +field('Body', 'body', question.body)
+    label(for="body")= "Body"
+    textarea(id="body" name="body") #{question.body}
     div(class='py-4')
       button(type='submit' class='btn btn-primary') Edit Question
-  form(action=`/` method='get')
-    button(class='btn btn-danger' type='submit') Cancel
+      a(class='btn btn-danger'  href=`/`) Cancel
+    script(src="/javascripts/editquestion.js")
