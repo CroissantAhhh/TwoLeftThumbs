@@ -1,9 +1,11 @@
 const express = require("express");
+const Sequelize = require("sequelize");
 const { check, validationResult } = require("express-validator");
 const { csrfProtection, asyncHandler } = require("./utils");
 const { requireAuth } = require("../auth");
 const router = express.Router();
 const db = require("../db/models");
+const op = Sequelize.Op;
 
 // check permissions helper middleware
 const checkPermissions = (question, currentUserId) => {
