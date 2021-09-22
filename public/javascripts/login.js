@@ -6,8 +6,8 @@ form.addEventListener("submit", async (e) => {
   const formData = new FormData(form);
   const email = formData.get("email");
   const password = formData.get("password");
-  const csrfToken = formData.get("_csrf");
-  const body = { email, password, csrfToken };
+  const _csrf = formData.get("_csrf");
+  const body = { email, password, _csrf };
   console.log(body);
   let res;
   try {
