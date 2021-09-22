@@ -4,9 +4,6 @@ block content
 
     h2= `${question.title}`
     p= `${question.body}`
-    form(action=`/questions/edit/${question.id}` method='get')
-        button(class='btn btn-danger' type='submit') Edit Question
-    form(action=`/questions/delete/${question.id}` method='get')
-        button(class='btn btn-danger' type='submit') Delete Question
-    form(action=`/` method='get')
-        button(class='btn btn-danger' type='submit') Cancel
+        button(class='btn btn-danger' type='submit' href=`/questions/edit/${question.id}`) Edit Question
+        button(class='btn btn-danger' type='submit' href=`/questions/delete/${question.id}`) Delete Question
+        button(class='btn btn-danger' type='submit' href="/") Cancel

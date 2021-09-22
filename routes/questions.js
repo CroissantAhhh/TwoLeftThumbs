@@ -105,8 +105,8 @@ router.get(
 );
 
 // post question edit
-router.post(
-	"/edit/:id(\\d+)",
+router.put(
+	"/:id(\\d+)",
 	requireAuth,
 	csrfProtection,
 	questionValidators,
@@ -160,8 +160,8 @@ router.get(
 );
 
 // post question delete
-router.post(
-	"/delete/:id(\\d+)",
+router.delete(
+	"/:id(\\d+)",
 	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
