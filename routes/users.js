@@ -65,7 +65,7 @@ router.post(
   "/login",
   csrfProtection,
   loginValidators,
-  asyncHandler(async (req, res) => {
+  asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
 
     let errors = [];
@@ -82,7 +82,8 @@ router.post(
 
         if (passwordMatch) {
           loginUser(req, res, user);
-          return res.redirect("/");
+          res.status(200).json();
+          return;
         }
       }
 
@@ -90,9 +91,8 @@ router.post(
     } else {
       errors = validatorErrors.array().map((error) => error.msg);
     }
-
-    res.render("user-login", {
-      title: "Login",
+    console.log(errors);
+    res.status(401).json({
       email,
       errors,
       csrfToken: req.csrfToken(),

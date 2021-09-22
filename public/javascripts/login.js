@@ -2,34 +2,52 @@ const form = document.querySelector(".login_form");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log("Im working");
   const formData = new FormData(form);
   const email = formData.get("email");
   const password = formData.get("password");
   const _csrf = formData.get("_csrf");
   const body = { email, password, _csrf };
-  console.log(body);
-  let res;
-  try {
-    res = await fetch("http://localhost:8000/users/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
 
-    if (res.status === 401) {
-      window.location.href = "/login";
-      return;
-    }
+  let res = await fetch("/users/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
 
+
+  if (res.status === 200) {
     window.location.href = "/";
     return;
-  } catch (e) {
-    if (res.status === 401) {
-      window.location.href = "/login";
-      return;
+  }
+
+
+  if (res.status >= 400 && res.status < 600) {
+    const data = await res.json();
+    const emailInput = document.querySelector("#email");
+    emailInput.value = data.email;
+    const errorsContainer = document.querySelector(".errors_container");
+    let errorsHtml = [
+      `
+        <div class="alert alert-danger">
+            Something went wrong. Please try again.
+        </div>
+      `,
+    ];
+    if (data.errors && Array.isArray(data.errors)) {
+      errorsHtml = data.errors.map(
+        (message) => `
+          <div class="alert alert-danger">
+              ${message}
+          </div>
+        `
+      );
     }
+    errorsContainer.innerHTML = errorsHtml.join("");
+  } else {
+    alert(
+      "Something went wrong. Please check your internet connection and try again!"
+    );
   }
 });
