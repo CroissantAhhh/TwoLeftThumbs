@@ -10,6 +10,7 @@ const { sequelize } = require("./db/models");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const questionsRouter = require("./routes/questions");
+const answersRouter = require("./routes/answers");
 const votesRouter = require("./routes/votes");
 const searchRouter = require("./routes/search");
 const { environment, sessionSecret } = require("./config");
@@ -39,6 +40,7 @@ app.use(restoreUser);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/questions", questionsRouter);
+app.use("/answers", answersRouter);
 app.use("/votes", votesRouter);
 app.use("/search", searchRouter);
 
