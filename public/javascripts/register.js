@@ -1,4 +1,27 @@
 const form = document.querySelector(".register_form");
+const demoUser = document.querySelector(".demo_user");
+
+demoUser.addEventListener("click", async (e) => {
+  const formData = new FormData(form);
+  const _csrf = formData.get("_csrf");
+  const email = "demouser@gmail.com";
+  const password = "P@ssw0rd";
+  e.preventDefault();
+  const body = { email, password, _csrf };
+
+  let res = await fetch("/users/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (res.status === 200) {
+    window.location.href = "/";
+    return;
+  }
+});
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
