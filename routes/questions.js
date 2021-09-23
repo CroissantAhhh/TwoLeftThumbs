@@ -67,6 +67,13 @@ router.post(
 
     if (validatorErrors.isEmpty()) {
       await question.save();
+
+      const vote = db.Vote.build({
+        dir: 1,
+        userId: req.session.auth.userId,
+        questionId: question.id
+      });
+      await vote.save();
       res.status(201).json();
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
@@ -83,6 +90,7 @@ router.post(
 // get specific question info
 router.get(
   "/:id",
+  csrfProtection,
   asyncHandler(async (req, res) => {
     let questionVoteCount = 0;
     let answerVoteCount = [];
@@ -104,7 +112,12 @@ router.get(
     question.votes.forEach((vote) => {
       questionVoteCount += vote.dir;
     });
-    res.render("question", { question, questionVoteCount, answerVoteCount });
+    res.render("question", {
+        question,
+        questionVoteCount,
+        answerVoteCount,
+        csrfToken: req.csrfToken(),
+    });
   })
 );
 
@@ -197,44 +210,5 @@ router.delete(
     res.status(200).json();
   })
 );
-
-router.post(
-    "/:id(\\d+)/votes",
-    csrfProtection,
-    asyncHandler(async (req, res) => {
-      const questionId = parseInt(req.params.id, 10);
-      const { dir } = req.body;
-
-      const vote = db.Vote.build({
-        dir,
-        userId: req.session.auth.userId,
-        questionId
-      });
-
-      await vote.save();
-      res.status(200).json();
-    })
-)
-
-router.put(
-    "/:id(\\d+)/votes/:voteId(\\d+)",
-    csrfProtection,
-    asyncHandler(async (req, res) => {
-      const questionId = parseInt(req.params.id, 10);
-      const voteToUpdate = await db.Vote.findOne({
-          where: {
-              userId: req.session.auth.userId,
-              questionId
-          }
-      })
-      const { dir } = req.body;
-      const vote = {
-          dir
-      }
-
-      await voteToUpdate.update(vote);
-      res.status(200).json();
-    })
-)
 
 module.exports = router;

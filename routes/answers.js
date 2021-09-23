@@ -3,6 +3,7 @@ const { validationResult } = require("express-validator");
 
 const db = require("../db/models");
 const { csrfProtection, asyncHandler, answerValidators } = require("./utils");
+const { requireAuth } = require("../auth");
 
 const router = express.Router();
 
@@ -11,19 +12,28 @@ router.post(
   csrfProtection,
   answerValidators,
   asyncHandler(async (req, res) => {
-    const { body } = req.body;
+    const { body, questionId } = req.body;
     const { userId } = req.session.auth;
+
+    console.log(req.body)
 
     const answer = await db.Answer.build({
       body,
       userId,
+      questionId,
     });
 
     const validatorErrors = validationResult(req);
 
     if (validatorErrors.isEmpty()) {
       await answer.save();
-      res.redirect("/questions/:id");
+      const vote = db.Vote.build({
+        dir: 1,
+        answerId: answer.id,
+        userId: req.session.auth.userId,
+      });
+      await vote.save();
+      res.redirect(`/questions/${questionId}`);
     } else {
       const errors = validatorErrors.array.map((error) => error.msg);
       res.render("index", {
@@ -58,44 +68,5 @@ router.put(
     res.redirect(`/questions/${answer.questionId}`);
   })
 );
-
-router.post(
-  "/:id(\\d+)/votes",
-  csrfProtection,
-  asyncHandler(async (req, res) => {
-    const answerId = document.querySelector(".answer_upVote").dataset.id;
-    const { dir } = req.body;
-
-    const vote = db.Vote.build({
-      dir,
-      answerId,
-      userId: req.session.auth.userId,
-    });
-
-    await vote.save();
-    res.status(200).json();
-  })
-)
-
-router.put(
-  "/:id(\\d+)/votes/:voteId(\\d+)",
-  csrfProtection,
-  asyncHandler(async (req, res) => {const answerId = document.querySelector(".answer_upVote").
-    dataset.id;
-    const voteToUpdate = await db.Vote.findOne({
-        where: {
-            answerId,
-            userId: req.session.auth.userId,
-        }
-    })
-    const { dir } = req.body;
-    const vote = {
-        dir
-    }
-
-    await voteToUpdate.update(vote);
-    res.status(200).json();
-  })
-)
 
 module.exports = router;
