@@ -88,7 +88,12 @@ router.get(
     const question = await db.Question.findByPk(questionId, {
       include: ["answers"],
     });
-    res.render("question", { question });
+    const votes = await db.Vote.findAll({where: {questionId}})
+    let voteCount = 0
+    votes.forEach(vote => {
+      voteCount += vote.dir
+    })
+    res.render("question", { question, voteCount });
   })
 );
 
