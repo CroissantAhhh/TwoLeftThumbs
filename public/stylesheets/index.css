@@ -84,13 +84,13 @@ form {
 
 .question_options {
   display: flex;
-  width: 30%;
+  width: 15%;
   align-items: center;
   justify-content: center;
   justify-content: space-evenly;
 }
 
-.question_options a {
+.question_options div {
   display: inline-flex;
   width: 35%;
   height: 30px;
@@ -99,5 +99,65 @@ form {
   text-decoration: none;
   background-color: lightseagreen;
   color: linen;
+  border-radius: 0.25rem;
+}
+
+.question_voteContainer {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  width: 15%;
+  margin: 5px;
+}
+
+.question_upVote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  background-color: lightseagreen;
+  color: linen;
+  height: 30px;
+  border-radius: 0.25rem;
+}
+
+.question_downVote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  background-color: lightseagreen;
+  color: linen;
+  height: 30px;
+  border-radius: 0.25rem;
+}
+
+.answer_voteContainer {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  width: 15%;
+  margin: 5px;
+}
+
+.answer_upVote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  background-color: lightseagreen;
+  color: linen;
+  height: 30px;
+  border-radius: 0.25rem;
+}
+
+.answer_downVote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  background-color: lightseagreen;
+  color: linen;
+  height: 30px;
   border-radius: 0.25rem;
 }

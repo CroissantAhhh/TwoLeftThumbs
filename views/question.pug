@@ -5,9 +5,15 @@ block content
         h2 #{question.title}
         p #{question.body}
         p #{questionVoteCount}
-            div.question_options
-                a(class='btn btn-danger'  href=`/questions/${question.id}/edit`) Edit Question
-                a(class='btn btn-danger'  href=`/questions/${question.id}/delete`) Delete Question
+        .question_voteContainer
+            .question_upVote Up Vote
+            .question_downVote Down Vote
+        div.question_options
+            .question_edit Edit
+            .question_delete Delete
     each answer in answerVoteCount
         div
             p #{answer[0].body}  #{answer[1]}
+            .answer_voteContainer
+                .answer_upVote Up Vote
+                .answer_downVote Down Vote
