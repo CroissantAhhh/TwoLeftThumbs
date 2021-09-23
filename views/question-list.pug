@@ -3,6 +3,5 @@ extends layout.pug
 block content
     ul
         each question in questions
-            li= `${question.title}`
-            form(action=`/questions/${question.id}` method='get')
-                button(class='btn btn-danger' type='submit') View Question
+            div
+                a(href=`/questions/${question.id}`) #{question.title}
