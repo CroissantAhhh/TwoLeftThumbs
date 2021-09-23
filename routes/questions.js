@@ -198,4 +198,41 @@ router.delete(
   })
 );
 
+router.post(
+    "/:id(\\d+)/votes",
+    csrfProtection,
+    asyncHandler(async (req, res) => {
+      const questionId = parseInt(req.params.id, 10);
+      const question = await db.Question.findByPk(questionId);
+      const { dir } = req.body;
+
+      const vote = db.Vote.build({
+        dir,
+        userId: req.session.auth.userId,
+        questionId
+      });
+
+      await vote.save();
+      res.status(200).json();
+    })
+)
+
+router.put(
+    "/:id(\\d+)/votes/:id(\\d+)",
+    csrfProtection,
+    asyncHandler(async (req, res) => {
+      const questionId = parseInt(req.params.id, 10);
+      const vote = await db.Vote.findOne({
+          where: {
+              userId: req.session.auth.userId,
+              questionId
+          }
+      })
+      const { dir } = req.body;
+
+      await vote.update({ dir });
+      res.status(200).json();
+    })
+)
+
 module.exports = router;
