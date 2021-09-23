@@ -59,4 +59,43 @@ router.put(
   })
 );
 
+router.post(
+  "/:id(\\d+)/votes",
+  csrfProtection,
+  asyncHandler(async (req, res) => {
+    const answerId = document.querySelector(".answer_upVote").dataset.id;
+    const { dir } = req.body;
+
+    const vote = db.Vote.build({
+      dir,
+      answerId,
+      userId: req.session.auth.userId,
+    });
+
+    await vote.save();
+    res.status(200).json();
+  })
+)
+
+router.put(
+  "/:id(\\d+)/votes/:voteId(\\d+)",
+  csrfProtection,
+  asyncHandler(async (req, res) => {
+    const answerId = document.querySelector(".answer_upVote").dataset.id;
+    const voteToUpdate = await db.Vote.findOne({
+        where: {
+            answerId,
+            userId: req.session.auth.userId,
+        }
+    })
+    const { dir } = req.body;
+    const vote = {
+        dir
+    }
+
+    await voteToUpdate.update(vote);
+    res.status(200).json();
+  })
+)
+
 module.exports = router;
