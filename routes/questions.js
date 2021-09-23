@@ -82,13 +82,12 @@ router.post(
 
 // get specific question info
 router.get(
-  "/:id(\\d+)",
+  "/:id",
   asyncHandler(async (req, res) => {
     const questionId = parseInt(req.params.id, 10);
     const question = await db.Question.findByPk(questionId, {
       include: ["answers"],
     });
-    console.log(question.answers);
     res.render("question", { question });
   })
 );
