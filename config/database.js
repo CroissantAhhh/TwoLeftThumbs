@@ -15,9 +15,10 @@ module.exports = {
     use_env_variable: 'DATABASE_URL',
     dialect: 'postgres',
     seederStorage: 'sequelize',
-    dialectOptions: { // << THIS OBJECT
-      ssl: { // << WITH THIS NESTED OBJECT
-        require: true, // <<vv AND THESE KEY:VALUE PAIRS
+
+    dialectOptions: {
+      ssl: {
+        require: true,
         rejectUnauthorized: false,
       },
     },
