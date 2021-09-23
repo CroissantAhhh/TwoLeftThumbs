@@ -16,12 +16,10 @@ form.addEventListener("submit", async (e) => {
     body: JSON.stringify(body),
   });
 
-
   if (res.status === 200) {
     window.location.href = "/";
     return;
   }
-
 
   if (res.status >= 400 && res.status < 600) {
     const data = await res.json();
@@ -49,5 +47,5 @@ form.addEventListener("submit", async (e) => {
     alert(
       "Something went wrong. Please check your internet connection and try again!"
     );
-  }
+}
 });
