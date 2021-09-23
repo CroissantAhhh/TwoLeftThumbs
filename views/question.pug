@@ -4,10 +4,10 @@ block content
     div
         h2 #{question.title}
         p #{question.body}
-        p #{voteCount}
+        p #{questionVoteCount}
             div.question_options
                 a(class='btn btn-danger'  href=`/questions/${question.id}/edit`) Edit Question
                 a(class='btn btn-danger'  href=`/questions/${question.id}/delete`) Delete Question
-    each answer in question.answers
+    each answer in answerVoteCount
         div
-            p #{answer.body}
+            p #{answer[0].body}  #{answer[1]}
