@@ -80,8 +80,8 @@ router.post(
 router.put(
   "/:id(\\d+)/votes/:voteId(\\d+)",
   csrfProtection,
-  asyncHandler(async (req, res) => {
-    const answerId = document.querySelector(".answer_upVote").dataset.id;
+  asyncHandler(async (req, res) => {const answerId = document.querySelector(".answer_upVote").
+    dataset.id;
     const voteToUpdate = await db.Vote.findOne({
         where: {
             answerId,
