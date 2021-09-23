@@ -84,16 +84,27 @@ router.post(
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
+    let questionVoteCount = 0;
+    let answerVoteCount = [];
     const questionId = parseInt(req.params.id, 10);
     const question = await db.Question.findByPk(questionId, {
-      include: ["answers"],
+      include: ["answers", "votes"],
     });
-    const votes = await db.Vote.findAll({where: {questionId}})
-    let voteCount = 0
-    votes.forEach(vote => {
-      voteCount += vote.dir
-    })
-    res.render("question", { question, voteCount });
+    const answers = await db.Answer.findAll({
+      where: { questionId },
+      include: ["votes"],
+    });
+    answers.forEach((answer) => {
+      let voteCount = 0;
+      answer.votes.forEach((vote) => {
+        voteCount += vote.dir;
+      });
+      answerVoteCount.push([answer, voteCount]);
+    });
+    question.votes.forEach((vote) => {
+      questionVoteCount += vote.dir;
+    });
+    res.render("question", { question, questionVoteCount, answerVoteCount });
   })
 );
 

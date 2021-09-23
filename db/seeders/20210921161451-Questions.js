@@ -34,6 +34,6 @@ module.exports = {
 
       Example:
       */
-      return queryInterface.bulkDelete('Questions', null, {});
+      return queryInterface.bulkDelete('Questions', null, { truncate: true, restartIdentity: true , cascade: true });
   }
 };
