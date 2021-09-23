@@ -7,7 +7,6 @@ const op = Sequelize.Op;
 
 router.get("/", async (req, res) => {
     const { term } = req.query;
-    console.log("search query....", req.query)
     const questions = await db.Question.findAll({
         where: {
             title: {
