@@ -83,7 +83,7 @@ router.post(
         if (passwordMatch) {
           loginUser(req, res, user);
           res.status(200).json();
-          return;
+          return
         }
       }
 

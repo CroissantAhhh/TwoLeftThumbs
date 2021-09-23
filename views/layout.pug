@@ -1,11 +1,13 @@
 doctype html
 html
   head
+    link(rel="stylesheet", href="/stylesheets/reset.css")
     link(rel='stylesheet' href='/stylesheets/index.css')
     body
       nav
         a.nav_brand(href='/') Two Left Thumbs
-        input(type="text" placeholder="Search on Two Left Thumbs...")
+        input(type="text" id="searchBar" placeholder="Search on Two Left Thumbs...")
+        button(type="submit" id="searchButton") Search
         .nav_links
           if locals.authenticated
             form(action='/users/logout' method='post')
@@ -13,4 +15,5 @@ html
           else
             a.nav_login(href='/users/login') Log In
             a.nav_signup(href='/users/register') Sign Up
+      script(src="/javascripts/search.js")
     block content
