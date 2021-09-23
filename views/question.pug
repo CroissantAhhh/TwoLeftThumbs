@@ -1,9 +1,12 @@
 extends layout.pug
 
 block content
-
-    h2= `${question.title}`
-    p= `${question.body}`
-        button(class='btn btn-danger' type='submit' href=`/questions/edit/${question.id}`) Edit Question
-        button(class='btn btn-danger' type='submit' href=`/questions/delete/${question.id}`) Delete Question
-        button(class='btn btn-danger' type='submit' href="/") Cancel
+    div
+        h2 #{question.title}
+        p #{question.body}
+            div.question_options
+                a(class='btn btn-danger'  href=`/questions/${question.id}/edit`) Edit Question
+                a(class='btn btn-danger'  href=`/questions/${question.id}/delete`) Delete Question
+    each answer in question.answers
+        div
+            p #{answer.body}

@@ -41,12 +41,12 @@ router.post(
       user.hashedPassword = hashedPassword;
       await user.save();
       loginUser(req, res, user);
-      res.redirect("/");
+      res.status(201).json();
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
-      res.render("user-register", {
-        title: "Register",
-        user,
+      res.status(401).json({
+        userName,
+        email,
         errors,
         csrfToken: req.csrfToken(),
       });
@@ -83,20 +83,19 @@ router.post(
         if (passwordMatch) {
           loginUser(req, res, user);
           res.status(200).json();
-          return;
+          return
         }
       }
 
       errors.push("Login failed for the provided email address and password");
     } else {
       errors = validatorErrors.array().map((error) => error.msg);
+      res.status(401).json({
+        email,
+        errors,
+        csrfToken: req.csrfToken(),
+      });
     }
-    console.log(errors);
-    res.status(401).json({
-      email,
-      errors,
-      csrfToken: req.csrfToken(),
-    });
   })
 );
 
