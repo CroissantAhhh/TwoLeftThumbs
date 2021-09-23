@@ -267,6 +267,6 @@ module.exports = {
 	},
 
 	down: (queryInterface, Sequelize) => {
-		return queryInterface.bulkDelete("Votes", null, {});
+		return queryInterface.bulkDelete("Votes", null, { truncate: true, restartIdentity: true , cascade: true });
 	},
 };
