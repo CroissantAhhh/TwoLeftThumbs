@@ -203,7 +203,6 @@ router.post(
     csrfProtection,
     asyncHandler(async (req, res) => {
       const questionId = parseInt(req.params.id, 10);
-      const question = await db.Question.findByPk(questionId);
       const { dir } = req.body;
 
       const vote = db.Vote.build({
@@ -218,19 +217,22 @@ router.post(
 )
 
 router.put(
-    "/:id(\\d+)/votes/:id(\\d+)",
+    "/:id(\\d+)/votes/:voteId(\\d+)",
     csrfProtection,
     asyncHandler(async (req, res) => {
       const questionId = parseInt(req.params.id, 10);
-      const vote = await db.Vote.findOne({
+      const voteToUpdate = await db.Vote.findOne({
           where: {
               userId: req.session.auth.userId,
               questionId
           }
       })
       const { dir } = req.body;
+      const vote = {
+          dir
+      }
 
-      await vote.update({ dir });
+      await voteToUpdate.update(vote);
       res.status(200).json();
     })
 )

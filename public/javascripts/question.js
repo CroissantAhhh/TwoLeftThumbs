@@ -5,30 +5,35 @@ const questionDownVote = document.querySelector(".question_downVote");
 
 answerUpVote.forEach((answer) => {
   answer.addEventListener("click", async (e) => {
-      const id = e.target.dataset.id
-      const body = {id, dir: 1, }
-    const res = await fetch(`votes/${id}`, {
+    const id = e.target.dataset.id;
+    const body = { id, dir: 1 };
+    const res = await fetch(`/votes/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
     });
+    const questionId = questionUpVote.dataset.id;
+    window.location.href = `/questions/${questionId}`;
   });
 });
 
 answerDownVote.forEach((answer) => {
-  answer.addEventListener("click", async (e) => {
-    // console.log(e.target.dataset.id);
-    //   const res = await fetch(`votes/${id}`, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(body),
-    //   });
+    answer.addEventListener("click", async (e) => {
+      const id = e.target.dataset.id;
+      const body = { id, dir: -1 };
+      const res = await fetch(`/votes/${id}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      const questionId = questionUpVote.dataset.id;
+      window.location.href = `/questions/${questionId}`;
+    });
   });
-});
 
 questionUpVote.addEventListener("click", async (e) => {
   console.log(e.target.dataset.id);
