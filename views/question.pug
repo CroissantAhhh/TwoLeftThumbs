@@ -8,13 +8,19 @@ block content
         .question_voteContainer
             .question_upVote(data-id=`${question.id}`) Up Vote
             .question_downVote(data-id=`${question.id}`) Down Vote
-        div.question_options
-            .question_edit(data-id=`${question.id}`) Edit
-            .question_delete(data-id=`${question.id}`) Delete
+        if locals.user.id === question.userId
+            div.question_options
+                .question_edit(data-id=`${question.id}`) Edit
+                .question_delete(data-id=`${question.id}`) Delete
     each answer in answerVoteCount
         div
-            p #{answer[0].body}  #{answer[1]}
+            p #{answer[0].body}
+            p #{answer[1]}
             .answer_voteContainer
                 .answer_upVote(data-id=`${answer[0].id}`) Up Vote
                 .answer_downVote(data-id=`${answer[0].id}`) Down Vote
+            if locals.user.id === answer[0].userId
+                div.question_options
+                    .answer_edit(data-id=`${answer[0].id}`) Edit
+                    .answer_delete(data-id=`${answer[0].id}`) Delete
     script(src="/javascripts/question.js")
