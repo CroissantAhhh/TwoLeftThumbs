@@ -20,39 +20,45 @@ answerUpVote.forEach((answer) => {
 });
 
 answerDownVote.forEach((answer) => {
-    answer.addEventListener("click", async (e) => {
-      const id = e.target.dataset.id;
-      const body = { id, dir: -1 };
-      const res = await fetch(`/votes/${id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
-      const questionId = questionUpVote.dataset.id;
-      window.location.href = `/questions/${questionId}`;
+  answer.addEventListener("click", async (e) => {
+    const id = e.target.dataset.id;
+    const body = { id, dir: -1 };
+    const res = await fetch(`/votes/${id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
     });
+    const questionId = questionUpVote.dataset.id;
+    window.location.href = `/questions/${questionId}`;
   });
+});
 
 questionUpVote.addEventListener("click", async (e) => {
-  console.log(e.target.dataset.id);
-  //   const res = await fetch(`votes/${id}`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(body),
-  //   });
+  const id = e.target.dataset.id;
+  const body = { id, dir: 1 };
+  const res = await fetch(`/votes/question/${id}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  const questionId = questionUpVote.dataset.id;
+  window.location.href = `/questions/${questionId}`;
 });
 
 questionDownVote.addEventListener("click", async (e) => {
-  console.log(e.target.dataset.id);
-  //   const res = await fetch(`votes/${id}`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(body),
-  //   });
-});
+    const id = e.target.dataset.id;
+    const body = { id, dir: -1 };
+    const res = await fetch(`/votes/question/${id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    const questionId = questionUpVote.dataset.id;
+    window.location.href = `/questions/${questionId}`;
+  });
