@@ -24,10 +24,16 @@
 }
 
 .questionTitle_container {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   border-bottom: 1px solid rgba(59, 54, 54, 0.233);
   box-sizing: border-box;
   padding: 15px;
+}
+
+.questionTitle_container h2 {
+ width: 89%;
 }
 
 .questionBody_container {
@@ -175,22 +181,22 @@
 
 .askQuestion_btn {
   background-color: lightseagreen;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   color: linen;
-  width: 55%;
   height: 30px;
   text-decoration: none;
   border-radius: 0.25rem;
-  margin: 10px;
+  margin: 2px;
   box-sizing: border-box;
   padding: 10px;
+  font-size: 10px;
 }
 
 .add_answer {
   width: 100%;
-  height: 30vh;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,16 +206,32 @@
 }
 
 #body {
-  width: 55%;
-  height: 250px;
+  width: 100%;
+  height: 200px;
   box-sizing: border-box;
   padding: 10px;
 }
 
+.yourAnswer_container {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding: 10px;
+}
+
+.addAnswerBtn_container {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding: 10px;
+}
+
 .addAnswer_btn {
-  display: block;
+  display: flex;
   box-sizing: border-box;
   padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .questionPage_right {

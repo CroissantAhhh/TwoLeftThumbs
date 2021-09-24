@@ -8,6 +8,7 @@ block content
     .questionPage_middle
         .questionTitle_container
             h2 #{question.title}
+            .askQuestion_btn Ask Question
         .questionBody_container
             .questionVote_container
                 .question_upVote(data-id=`${question.id}`)
@@ -20,6 +21,8 @@ block content
                 div.question_options
                     .question_edit(data-id=`${question.id}`) Edit
                     .question_delete(data-id=`${question.id}`) Delete
+        .totalAnswers_container
+            h2 #{answerVoteCount.length} Answers
         each answer in answerVoteCount
             .answerBody_container
                 .answerVote_container
@@ -36,11 +39,12 @@ block content
 
         form.add_answer(action=`/answers` method='post')
             input(type='hidden' name='_csrf', value=csrfToken)
-            label(for="body")= "Your Answer"
+            .yourAnswer_container
+                h2 Your Answer
             textarea(id="body" name="body")
             input(type='hidden' name='questionId', value=question.id)
-            div(class='py-4')
-            button(type='submit' class='addAnswer_btn') Add Answer
+            .addAnswerBtn_container
+                button(type='submit' class='addAnswer_btn') Add Answer
     .questionPage_right
         p Right
     script(src="/javascripts/question.js")
