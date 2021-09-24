@@ -1,3 +1,6 @@
-window.addEventListener("load", (event)=>{
-    console.log("hello from javascript!")
-})
+window.addEventListener("load", (event) => {
+  const auth = document.querySelector("#authenticated");
+  if (auth.dataset.authenticated) {
+    window.location.href = "/questions";
+  }
+});
