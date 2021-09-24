@@ -76,3 +76,150 @@ form {
   justify-content: center;
   align-items: center;
 }
+
+.question_options {
+  display: flex;
+  width: 15%;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.question_options div {
+  display: inline-flex;
+  width: 35%;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: lightseagreen;
+  color: linen;
+  border-radius: 0.25rem;
+}
+
+.question_voteContainer {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  width: 15%;
+  margin: 5px;
+}
+
+.question_upVote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  background-color: lightseagreen;
+  color: linen;
+  height: 30px;
+  border-radius: 0.25rem;
+}
+
+.question_downVote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  background-color: lightseagreen;
+  color: linen;
+  height: 30px;
+  border-radius: 0.25rem;
+}
+
+.answer_voteContainer {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  width: 15%;
+  margin: 5px;
+}
+
+.answer_upVote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  background-color: lightseagreen;
+  color: linen;
+  height: 30px;
+  border-radius: 0.25rem;
+}
+
+.answer_downVote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  background-color: lightseagreen;
+  color: linen;
+  height: 30px;
+  border-radius: 0.25rem;
+}
+
+.askQuestion_container {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.askQuestion_btn {
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: linen;
+  width: 55%;
+  height: 30px;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  margin: 10px;
+}
+
+.add_answer {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#body {
+  width: 55%;
+  height: 250px;
+}
+
+.addAnswer_btn {
+  display: block;
+}
+
+.questions_title {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 5%;
+}
+
+.questions_container {
+  display: flex;
+  margin: 0% 20%;
+  flex-direction: column;
+  background-color: white;
+}
+
+.question_container {
+  display: flex;
+  height: 5%;
+  padding: 5%;
+  border-top: 1px solid black;
+}
+
+.question_container > * {
+  margin: 1%;
+}
+
+.question_container > a {
+  text-decoration: none;
+}
