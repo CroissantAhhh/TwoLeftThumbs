@@ -71,7 +71,7 @@ router.post(
       const vote = db.Vote.build({
         dir: 1,
         userId: req.session.auth.userId,
-        questionId: question.id
+        questionId: question.id,
       });
       await vote.save();
       res.status(201).json();
@@ -113,10 +113,10 @@ router.get(
       questionVoteCount += vote.dir;
     });
     res.render("question", {
-        question,
-        questionVoteCount,
-        answerVoteCount,
-        csrfToken: req.csrfToken(),
+      question,
+      questionVoteCount,
+      answerVoteCount,
+      csrfToken: req.csrfToken(),
     });
   })
 );

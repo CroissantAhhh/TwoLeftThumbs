@@ -1,7 +1,9 @@
 extends layout.pug
 
 block content
-  h1= title
-  p Welcome to your Project Skeleton
+  script(src="/javascripts/index.js")
+  if locals.authenticated === false
+    h1= title
+    p Welcome to your Project Skeleton
 
-  a(class='btn btn-danger'  href="/questions") View Questions
+    a(class='btn btn-danger'  href="/questions") View Questions

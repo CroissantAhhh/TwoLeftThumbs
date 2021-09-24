@@ -11,8 +11,6 @@ button {
   background: lightseagreen;
   color: linen;
   font-family: system-ui, sans-serif;
-  /* font-size: 1rem; */
-  /* line-height: 1.2; */
   white-space: nowrap;
   text-decoration: none;
   padding: 0.25rem 0.5rem;
@@ -160,4 +158,25 @@ form {
   color: linen;
   height: 30px;
   border-radius: 0.25rem;
+}
+
+.askQuestion_container {
+  display: flex;
+  width: 10%;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.askQuestion_btn {
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: linen;
+  width: 55%;
+  height: 30px;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  margin: 10px;
 }

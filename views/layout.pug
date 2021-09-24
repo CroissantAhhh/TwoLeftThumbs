@@ -11,7 +11,7 @@ html
         button(type="submit" id="searchButton") Search
         .nav_links
           if locals.authenticated
-            form(action='/users/logout' method='post')
+            form#authenticated(action='/users/logout' method='post' data-authenticated=`${locals.authenticated}`)
               button.nav_logout Logout
           else
             a.nav_login(href='/users/login') Log In
