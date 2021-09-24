@@ -1,10 +1,17 @@
 extends layout.pug
 
 block content
-    ul
-        each question in questions
-            div
-                a(href=`/questions/${question.id}`) #{question.title}
-    .askQuestion_container
-        .askQuestion_btn Ask Question
-    script(src="/javascripts/questionlist.js")
+    if questions.length
+        ul
+            each question in questions
+                div
+                    a(href=`/questions/${question.id}`) #{question.title}
+        .askQuestion_container
+            .askQuestion_btn Ask Question
+        script(src="/javascripts/questionlist.js")
+
+    else
+        h2 Question not found
+        .askQuestion_container
+            .askQuestion_btn Ask Question
+        script(src="/javascripts/questionlist.js")

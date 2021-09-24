@@ -32,7 +32,6 @@ router.get("/", async (req, res) => {
 	for (const term of q) {
 		await termSearch(term);
 	}
-
 	res.render("question-list", { questions });
 	questions = [];
 	questionSet.clear();
