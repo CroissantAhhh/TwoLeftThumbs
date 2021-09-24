@@ -3,7 +3,7 @@ extends layout.pug
 block content
   script(src="/javascripts/index.js")
   if locals.authenticated === false
-    h1= title
-    p Welcome to your Project Skeleton
+    div(class="background")
 
-    a(class='btn btn-danger'  href="/questions") View Questions
+      h1 Welcome to Two Left Thumbs!
+      a(class='btn btn-danger'  href="/questions") View Questions
