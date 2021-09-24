@@ -31,9 +31,9 @@ block content
 
     form.add_answer(action=`/answers` method='post')
         input(type='hidden' name='_csrf', value=csrfToken)
-        label(for="body")= "Body"
+        label(for="body")= "Your Answer"
         textarea(id="body" name="body")
         input(type='hidden' name='questionId', value=question.id)
         div(class='py-4')
-        button(type='submit' class='btn btn-primary') Add Answer
+        button(type='submit' class='addAnswer_btn') Add Answer
     script(src="/javascripts/question.js")
