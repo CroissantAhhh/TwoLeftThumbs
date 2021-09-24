@@ -1,15 +1,25 @@
 extends layout.pug
 
-include utils.pug
-
 block content
-  div.errors_container
-  form.add_question(action=`/questions` method='post')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    +field('Title', 'title', question.title)
-    label(for="body")= "Body"
-    textarea(id="body" name="body" value=question.body)
-    div(class='py-4')
-      button(type='submit' class='btn btn-primary') Add Question
-      a(href=`/questions` class='btn btn-warning ml-2') Cancel
-    script(src="/javascripts/addquestion.js")
+  .page_title_container: h2#ask_a_question Ask a question
+  .errors_container
+  .ask_question_body_container
+    .ask_question_container
+      form.add_question(action=`/questions` method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        .question_title_container
+          label(for="title")= "Title"
+          input(type="text" id="title_input" name="title" value="What's your gaming question?")
+        .question_body_container
+          label(for="body")= "Body"
+            h2#title_description Include all the information someone would need to answer your question
+          textarea(id="body" name="body" value=question.body)
+        div(class='ask_question_buttons_container')
+          button(type='submit' class='submit_button') Add Question
+          a(href=`/questions` class='cancel_button') Cancel
+        script(src="/javascripts/addquestion.js")
+    .question_instructions_container
+      .question_step_container
+        h2#question_step Step 1: Draft you question
+      .question_step_description_container
+        p#question_step_description The community is here to help you with questions about gaming. Provide details and share research with your question.
