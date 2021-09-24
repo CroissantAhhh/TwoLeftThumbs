@@ -1,3 +1,4 @@
+
 extends layout.pug
 
 block content
@@ -27,4 +28,18 @@ block content
                 div.question_options
                     .answer_edit(data-id=`${answer[0].id}`) Edit
                     .answer_delete(data-id=`${answer[0].id}`) Delete
+
+    form.add_answer(action=`/answers` method='post')
+        input(type='hidden' name='_csrf', value=csrfToken)
+        label(for="body")= "Body"
+        textarea(id="body" name="body")
+        input(type='hidden' name='questionId', value=question.id)
+        div(class='py-4')
+        button(type='submit' class='btn btn-primary') Add Answer
+
+            if locals.user.id === answer[0].userId
+                div.question_options
+                    .answer_edit(data-id=`${answer[0].id}`) Edit
+                    .answer_delete(data-id=`${answer[0].id}`) Delete
+
     script(src="/javascripts/question.js")
