@@ -2,24 +2,26 @@
     display: flex;
     flex-direction: row;
 
-
 }
 
 .page_title_container {
-    margin: 1.85em;
+    height: 1.7em;
 }
 
 #ask_a_question {
     font-size: 25px;
+    margin-bottom: 1.2em;
+    margin-left: 1em;
 }
 
 .ask_question_container {
     max-width: 600px;
     background-color: white;
-    margin-left: 1.35em;
+    margin-left: 1.5em;
     border-radius: 3px;
     padding-bottom: .15em;
     max-width: auto;
+    box-shadow: 0px 0px 4px 2px rgb(191, 191, 191);
 }
 
 .question_title_container{
@@ -75,11 +77,15 @@
 
 .submit_button{
     color: white;
-    background-color: rgb(5, 95, 191);
+    background-color: rgb(5, 95, 183);
     margin-left: .6em;
     width: 9em;
     height: 2.75em;
     font-size: 12px;
+}
+
+.submit_button:hover{
+    background-color: rgb(0, 115.6, 204);
 }
 
 .cancel_button{
@@ -89,15 +95,22 @@
     color: rgb(77, 76, 76);
 }
 
+.cancel_button:hover{
+    color: rgb(5, 95, 183);
+}
+
 .question_instructions_container{
-    width: 22em;
-    height: 30em;
-    margin-right: 2em;
+    width: 20em;
+    height: 8.1em;
+    margin-left: 2em;
+    box-shadow: 0px 0px 4px 2px rgb(191, 191, 191);
 }
 
 .question_step_container{
     background-color: rgb(235, 239, 240);
     padding: 1em;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 #question_step{
@@ -107,10 +120,16 @@
 
 .question_step_description_container{
     background-color: rgb(248, 248, 250);
-    padding: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-top: .4em;
+    height: 5em;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 #question_step_description{
     font-size: 12px;
-    color: rgb(77, 76, 76);
+    color: rgb(65, 65, 65);
 }
