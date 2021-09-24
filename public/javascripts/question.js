@@ -7,6 +7,7 @@ answerUpVote.forEach((answer) => {
   answer.addEventListener("click", async (e) => {
     e.stopPropagation();
     const id = e.target.dataset.id;
+    console.log(id);
     const body = { id, dir: 1 };
     const res = await fetch(`/votes/${id}`, {
       method: "POST",
