@@ -5,6 +5,7 @@ const { csrfProtection, asyncHandler } = require("./utils");
 const { requireAuth } = require("../auth");
 const router = express.Router();
 const db = require("../db/models");
+const { sequelize } = require("../db/models");
 const op = Sequelize.Op;
 
 // check permissions helper middleware
@@ -21,7 +22,15 @@ router.get(
   "/",
   requireAuth,
   asyncHandler(async (req, res) => {
-    const questions = await db.Question.findAll();
+    const questions = await db.Question.findAll({include: ["votes"]});
+    questions.forEach((question) => {
+      let voteSum = 0;
+      for (let vote of question.votes) {
+        voteSum += vote.dir;
+      }
+      question.votes = voteSum;
+    });
+    questions.sort((a, b) => b.votes - a.votes);
     res.render("question-list", { title: "Questions", questions });
   })
 );
@@ -109,6 +118,7 @@ router.get(
       });
       answerVoteCount.push([answer, voteCount]);
     });
+    answerVoteCount.sort((a, b) => b[1] - a[1]);
     question.votes.forEach((vote) => {
       questionVoteCount += vote.dir;
     });
