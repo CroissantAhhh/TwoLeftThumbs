@@ -221,6 +221,28 @@ form {
 }
 
 .question_container > a {
+  text-decoration: none;
+}
+
+.login_container {
+  background-color: white;
+  display: flex;
+  width: 40%;
+  height: 40%;
+  margin: 10% 30%;
+  border: 3px solid black;
+  padding: 30px;
+}
+
+.login_form > * {
+  padding: 10px;
+}
+
+.login_title {
+  position: relative;
+  text-align: center;
+  top: 10%;
+=======
 	text-decoration: none;
 }
 
