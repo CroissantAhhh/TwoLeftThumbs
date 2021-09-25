@@ -4,6 +4,7 @@ include utils.pug
 
 block content
   div.register_container
+    h2.register_title Register
     div.errors_container
     form.register_form(action='/users' method='post')
       input(type='hidden' name='_csrf' value=csrfToken)
@@ -12,7 +13,10 @@ block content
       +field('Password', 'password', user.password, 'password')
       +field('Confirm Password', 'confirmPassword', '', 'password')
       div(class='py-4')
-        button Register
-        button.demo_user Demo
-        a(href='/' class='btn btn-warning ml-2') Cancel
+        button.RegisterBtn Register
+        button.demo_user Demo User
+        a.cancelBtn(href='/') Cancel
       script(src="/javascripts/register.js")
+      link(rel='stylesheet' href='/stylesheets/signup.css')
+
+

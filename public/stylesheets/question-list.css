@@ -1,5 +1,3 @@
-
-
 .askQuestion_container {
 	display: flex;
 	width: 25%;
@@ -20,7 +18,6 @@
 	border-radius: 0.25rem;
 	margin: 10px;
 }
-
 
 .questions_title {
 	text-align: center;
@@ -47,5 +44,23 @@
 }
 
 .question_container > a {
-  text-decoration: none;
+	text-decoration: none;
+}
+
+.noQuestionContainer {
+	color: rgb(63, 177, 52);
+	background-color: rgba(135, 118, 118, 0.15);
+	backdrop-filter: blur(4.5px);
+	display: flex;
+	align-self: center;
+	flex-direction: column;
+	justify-content: center;
+	width: 50vh;
+	height: 10vh;
+	margin: 10% 30%;
+	border: 3px solid black;
+	border-radius: 15px;
+	padding: 10px 10px 10px 100px;
+	text-decoration: none;
+	font-size: 20px;
 }
