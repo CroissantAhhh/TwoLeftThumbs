@@ -8,15 +8,14 @@ body {
 button {
   border: 0;
   height: 30px;
-  border-radius: 0.25rem;
+  width: 4%;
   background: rgb(167, 3, 3);
   color: linen;
   font-family: system-ui, sans-serif;
   white-space: nowrap;
   text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  margin: 0.25rem;
   cursor: pointer;
+  border-radius: 0.25rem;
 }
 
 nav {
@@ -35,11 +34,22 @@ nav a {
   text-decoration: none;
 }
 
+.searchBar_container {
+  width: 70%;
+}
+
+.searchBar_container button {
+  border-radius: 0 0.3rem 0.3rem 0;
+}
 nav input {
   background-color: linen;
-  width: 70%;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  width: 95%;
   height: 30px;
-  border-radius: 0.25rem;
+  border-radius: 0.3rem 0 0 0.3rem;
 }
 
 .nav_links {
@@ -61,17 +71,27 @@ nav input {
 
 .nav_login {
   background-color: linen;
-  color: lightseagreen;
+  color: rgb(167, 3, 3);
 }
 
 .nav_signup {
-  background-color: lightseagreen;
+  background-color: rgb(167, 3, 3);
 }
 
 .nav_logout {
-  background-color: lightseagreen;
+  background-color: rgb(167, 3, 3);
   color: linen;
   width: 100%;
   height: 30px;
   text-decoration: none;
+}
+
+.nav_logo {
+  width: 120px;
+  height: 30px;
+}
+
+.banner_container {
+  width: 100%;
+  height: 15vh;
 }

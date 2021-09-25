@@ -6,9 +6,12 @@ html
     script(src="https://kit.fontawesome.com/fbb21b998a.js" crossorigin="anonymous")
     body
       nav
-        a.nav_brand(href='/') Two Left Thumbs
-        input(type="text" id="searchBar" placeholder="Search on Two Left Thumbs...")
-        button(type="submit" id="searchButton") Search
+        a(href="/")
+          img.nav_logo(src="https://cdn.worldvectorlogo.com/logos/stack-exchange-wordmark.svg")
+        .searchBar_container
+          input(type="text" id="searchBar" placeholder="Search on Two Left Thumbs...")
+          button(type="submit" id="searchButton")
+            i(class="fa fa-search" aria-hidden="true")
         .nav_links
           if locals.authenticated
             form#authenticated(action='/users/logout' method='post' data-authenticated=`${locals.authenticated}`)
@@ -16,5 +19,6 @@ html
           else
             a.nav_login(href='/users/login') Log In
             a.nav_signup(href='/users/register') Sign Up
+      .banner_container
       script(src="/javascripts/search.js")
     block content

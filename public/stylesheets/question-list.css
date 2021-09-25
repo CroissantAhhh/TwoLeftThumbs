@@ -9,7 +9,7 @@
 }
 
 .askQuestion_btn {
-	background-color: lightseagreen;
+	background-color: rgb(167, 3, 3);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -49,7 +49,3 @@
 .question_container > a {
   text-decoration: none;
 }
-
-
-
-
