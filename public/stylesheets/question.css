@@ -299,3 +299,33 @@
   padding: 10px;
   text-align: center;
 }
+
+.topQuestions_container {
+  width: 95%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.topQuestions_links {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+
+.topQuestions_links a {
+  width: 90%;
+  text-decoration: none;
+  padding: 10px;
+  color: rgb(167, 3, 3);
+}
+
+.topQuestions_voteCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8%;
+  height: 30px;
+  background-color: rgb(235, 239, 240);
+  /* padding: 10px; */
+}

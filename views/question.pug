@@ -56,5 +56,12 @@ block content
                     h3
                         strong Cuddling my beloved winged partner Phosphor from Immortals Fenyx Rising
                         |  by pinckerman
+            .topQuestions_container
+                .topQuestions_title
+                    h3 Top Questions
+                each question in top10Questions
+                    .topQuestions_links
+                        .topQuestions_voteCount #{question.answers.length}
+                        a(href=`/questions/${question.id}`) #{question.title}
     script(src="/javascripts/question.js")
     link(rel='stylesheet' href='/stylesheets/question.css')
