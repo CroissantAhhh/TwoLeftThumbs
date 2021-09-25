@@ -3,49 +3,58 @@ extends layout.pug
 
 block content
     .questionPage_container
-    .questionPage_left
-        P Left
-    .questionPage_middle
-        .questionTitle_container
-            h2 #{question.title}
-            .askQuestion_btn Ask Question
-        .questionBody_container
-            .questionVote_container
-                .question_upVote(data-id=`${question.id}`)
-                    i.fa.fa-caret-up(data-id=`${question.id}`)
-                div #{questionVoteCount}
-                .question_downVote(data-id=`${question.id}`)
-                    i.fa.fa-caret-down(data-id=`${question.id}`)
-            .questionBody_text #{question.body}
-        if locals.user.id === question.userId
-                div.question_options
-                    .question_edit(data-id=`${question.id}`) Edit
-                    .question_delete(data-id=`${question.id}`) Delete
-        .totalAnswers_container
-            h2 #{answerVoteCount.length} Answers
-        each answer in answerVoteCount
-            .answerBody_container
-                .answerVote_container
-                    .answer_upVote(data-id=`${answer[0].id}`)
-                        i.fa.fa-caret-up(data-id=`${answer[0].id}`)
-                    div #{answer[1]}
-                    .answer_downVote(data-id=`${answer[0].id}`)
-                        i.fa.fa-caret-down(data-id=`${answer[0].id}`)
-                .answerBody_text #{answer[0].body}
-                    if locals.user.id === answer[0].userId
-                        div.question_options
-                            .answer_edit(data-id=`${answer[0].id}`) Edit
-                            .answer_delete(data-id=`${answer[0].id}`) Delete
+        .questionPage_left
+            P Left
+        .questionPage_middle
+            .questionTitle_container
+                h2 #{question.title}
+                .askQuestion_btn Ask Question
+            .questionBody_container
+                .questionVote_container
+                    .question_upVote(data-id=`${question.id}`)
+                        i.fa.fa-caret-up(data-id=`${question.id}`)
+                    div #{questionVoteCount}
+                    .question_downVote(data-id=`${question.id}`)
+                        i.fa.fa-caret-down(data-id=`${question.id}`)
+                .questionBody_text #{question.body}
+            if locals.user.id === question.userId
+                    div.question_options
+                        .question_edit(data-id=`${question.id}`) Edit
+                        .question_delete(data-id=`${question.id}`) Delete
+            .totalAnswers_container
+                h2 #{answerVoteCount.length} Answers
+            each answer in answerVoteCount
+                .answerBody_container
+                    .answerVote_container
+                        .answer_upVote(data-id=`${answer[0].id}`)
+                            i.fa.fa-caret-up(data-id=`${answer[0].id}`)
+                        div #{answer[1]}
+                        .answer_downVote(data-id=`${answer[0].id}`)
+                            i.fa.fa-caret-down(data-id=`${answer[0].id}`)
+                    .answerBody_text #{answer[0].body}
+                        if locals.user.id === answer[0].userId
+                            div.question_options
+                                .answer_edit(data-id=`${answer[0].id}`) Edit
+                                .answer_delete(data-id=`${answer[0].id}`) Delete
 
-        form.add_answer(action=`/answers` method='post')
-            input(type='hidden' name='_csrf', value=csrfToken)
-            .yourAnswer_container
-                h2 Your Answer
-            textarea(id="body" name="body")
-            input(type='hidden' name='questionId', value=question.id)
-            .addAnswerBtn_container
-                button(type='submit' class='addAnswer_btn') Add Answer
-    .questionPage_right
-        p Right
+            form.add_answer(action=`/answers` method='post')
+                input(type='hidden' name='_csrf', value=csrfToken)
+                .yourAnswer_container
+                    h2 Your Answer
+                textarea(id="body" name="body")
+                input(type='hidden' name='questionId', value=question.id)
+                .addAnswerBtn_container
+                    button(type='submit' class='addAnswer_btn') Add Answer
+        .questionPage_right
+            .screenShot_container
+                .screenShot_title
+                    h3 Screenshot of the Week
+                .screenShot_img
+                    a(href="https://i.stack.imgur.com/Um7GV.jpg")
+                        img(src="https://i.stack.imgur.com/Um7GV.jpg", alt="")
+                .screenShot_text
+                    h3
+                        strong Cuddling my beloved winged partner Phosphor from Immortals Fenyx Rising
+                        |  by pinckerman
     script(src="/javascripts/question.js")
     link(rel='stylesheet' href='/stylesheets/question.css')
