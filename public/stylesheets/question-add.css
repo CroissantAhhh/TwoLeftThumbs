@@ -99,6 +99,15 @@
     color: rgb(5, 95, 183);
 }
 
+.sideboxes_container{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20em;
+    width: 25em;
+    /* border: 1px solid black; */
+}
+
 .question_instructions_container{
     width: 20em;
     height: 8.1em;
@@ -111,6 +120,7 @@
     padding: 1em;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    border-bottom: 1px solid rgb(216, 216, 216);
 }
 
 #question_step{
@@ -132,4 +142,97 @@
 #question_step_description{
     font-size: 12px;
     color: rgb(65, 65, 65);
+}
+
+.helpful_links_container{
+    width: 20em;
+    height: 10em;
+    margin-top: 1em;
+    margin-left: 2em;
+    box-shadow: 0px 0px 4px 2px rgb(191, 191, 191);
+
+}
+
+.helpful_link_box{
+    background-color: rgb(235, 239, 240);
+    padding: 1em;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+#link_box_title{
+    font-size: 14px;
+    color: rgb(77, 76, 76);
+}
+
+.link_box{
+    background-color: rgb(248, 248, 250);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-top: .4em;
+    height: 5em;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.help_links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 6.78em;
+    padding: 1em;
+    background-color: rgb(248, 248, 250);
+}
+
+.good_question{
+    font-size: 12px;
+    color: rgb(65, 65, 65);
+}
+
+.good_questions_link{
+    font-size: 12px;
+    color: rgb(0, 96, 198);
+    border-bottom-style: hidden;
+}
+
+.good_questions_link:link{
+    text-decoration: none;
+}
+.good_questions_link:visited{
+    text-decoration: none;
+}
+.good_questions_link:active{
+    text-decoration: none;
+}
+.good_questions_link:hover{
+    text-decoration: none;
+    color: rgb(74, 131, 255);
+}
+
+.lfg{
+    font-size: 12px;
+    color: rgb(65, 65, 65);
+}
+
+.lfg_link{
+    font-size: 12px;
+    color: rgb(0, 96, 198);
+    border-bottom-style: hidden;
+}
+
+.lfg_link:link{
+    text-decoration: none;
+}
+.lfg_link:visited{
+    text-decoration: none;
+}
+.lfg_link:active{
+    text-decoration: none;
+}
+.lfg_link:hover{
+    font-size: 12px;
+    color: rgb(0, 96, 198);
+    text-decoration: none;
 }

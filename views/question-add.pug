@@ -20,8 +20,17 @@ block content
           button(type='submit' class='submit_button') Add Question
           a(href=`/questions` class='cancel_button') Cancel
         script(src="/javascripts/addquestion.js")
-    .question_instructions_container
-      .question_step_container
-        h2#question_step Step 1: Draft you question
-      .question_step_description_container
-        p#question_step_description The community is here to help you with questions about gaming. Provide details and share research with your question.
+    .sideboxes_container
+      .question_instructions_container
+        .question_step_container
+          h2#question_step Step 1: Draft you question
+        .question_step_description_container
+          p#question_step_description The community is here to help you with questions about gaming. Provide details and share research with your question.
+      .helpful_links_container
+        .helpful_link_box
+          h2#link_box_title Helpful links
+        .help_links
+          h4.good_question Find more information about
+            a(class='good_questions_link' href='https://www.dummies.com/careers/find-a-job/interviews/ten-tips-for-asking-good-questions/')  how to to ask a good question here
+          h4.lfg Find gamers to
+            a(class='lfg_link' href='https://lfg-network.com/')  play alongside with here
