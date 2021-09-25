@@ -1,66 +1,124 @@
+::placeholder {
+  color: rgb(167, 3, 3);
+}
+
+.errors_container {
+  width: 60%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  border: 3px solid rgb(167, 3, 3);
+  border-radius: 15px;
+}
+
+.errors_container.hidden {
+  display: none;
+}
+
+.errors_container * {
+  padding: 5px;
+}
+
 .register_container {
-	color: rgb(63, 177, 52);
-	background-color: rgba(135, 118, 118, 0.15);
-	backdrop-filter: blur(4.5px);
-	display: flex;
-	flex-direction: column;
-	width: 50%;
-	height: 40vh;
-	margin: 10% 30%;
-	border: 3px solid black;
-	border-radius: 15px;
-	padding: 15px 10% 20% 10%;
-	text-decoration: none;
+  color: rgb(167, 3, 3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+  text-decoration: none;
 }
 
 .register_title {
-	padding-bottom: 15px;
-	font-weight: 700;
-	font-size: 27px;
-	position: relative;
-	text-align: center;
-	top: 10%;
-	text-decoration: none;
+  padding-bottom: 15px;
+  font-weight: 700;
+  font-size: 27px;
+  text-align: center;
+  top: 10%;
+  text-decoration: none;
 }
 
 .register_form > * {
-	padding: 9px;
+  padding: 10px;
 }
 
 .RegisterBtn {
-	background-color: rgb(167, 3, 3);
-	color: linen;
-	width: 20%;
-	height: 30px;
-	padding: 10px;
-	text-decoration: none;
-	margin-left: 10px;
-	font-size: 14px;
-	padding-top: 6px;
+  background-color: rgb(167, 3, 3);
+  color: linen;
+  width: 10%;
+  height: 30px;
+  padding: 10px;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 14px;
+  padding-top: 6px;
 }
 
 .demo_user {
-	background-color: rgb(167, 3, 3);
-	color: linen;
-	width: 20%;
-	height: 30px;
-	padding: 6px;
-	margin-left: 20px;
-	text-decoration: none;
-	font-size: 14px;
-	cursor: pointer;
-	border-radius: 0.25rem;
+  background-color: rgb(167, 3, 3);
+  color: linen;
+  width: 10%;
+  height: 30px;
+  padding: 6px;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0.25rem;
 }
 
 .cancelBtn {
-	background-color: rgb(167, 3, 3);
-	color: linen;
-	width: 20%;
-	height: 30px;
-	padding: 6px;
-	margin-left: 20px;
-	text-decoration: none;
-	font-size: 14px;
-	cursor: pointer;
-	border-radius: 0.25rem;
+  background-color: rgb(167, 3, 3);
+  display: flex;
+  color: linen;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  height: 30px;
+  padding: 6px;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+form {
+  width: 60%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  border: 3px solid rgb(167, 3, 3);
+  border-radius: 15px;
+}
+
+.input_container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group {
+  width: 60%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+}
+
+.py-4 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
