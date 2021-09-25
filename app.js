@@ -13,6 +13,7 @@ const questionsRouter = require("./routes/questions");
 const answersRouter = require("./routes/answers");
 const votesRouter = require("./routes/votes");
 const searchRouter = require("./routes/search");
+const aboutRouter = require("./routes/about");
 const { environment, sessionSecret } = require("./config");
 const { restoreUser } = require("./auth");
 
@@ -43,6 +44,7 @@ app.use("/questions", questionsRouter);
 app.use("/answers", answersRouter);
 app.use("/votes", votesRouter);
 app.use("/search", searchRouter);
+app.use("/about", aboutRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));

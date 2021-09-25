@@ -1,9 +1,7 @@
 extends layout.pug
 
+
 block content
-  script(src="/javascripts/index.js")
-  link(rel='stylesheet' href='/stylesheets/index.css')
-  if locals.authenticated === false
     .welcomePage_container
       .welcomePage_content
         .welcomePage_title
@@ -54,3 +52,4 @@ block content
               strong  your own
               i  questions and answers. Once you earn 50 reputation, you can comment on anybody's post.
             p Remember: we're all here to learn, so be friendly and helpful!
+    link(rel='stylesheet' href='/stylesheets/index.css')

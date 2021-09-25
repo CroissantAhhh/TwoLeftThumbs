@@ -105,6 +105,7 @@ router.get(
     let questionVoteCount = 0;
     let answerVoteCount = [];
     const questionId = parseInt(req.params.id, 10);
+    const topQuestions = await db.Question.findAll({include: ["answers"]})
     const question = await db.Question.findByPk(questionId, {
       include: ["answers", "votes"],
     });
@@ -120,6 +121,11 @@ router.get(
       answerVoteCount.push([answer, voteCount]);
     });
     answerVoteCount.sort((a, b) => b[1] - a[1]);
+    topQuestions.sort((a, b) => b.answers.length - a.answers.length)
+    let top10Questions = []
+    for (let i = 0; i < 10; i++) {
+      top10Questions = [...top10Questions, topQuestions[i]]
+    }
     question.votes.forEach((vote) => {
       questionVoteCount += vote.dir;
     });
@@ -127,6 +133,7 @@ router.get(
       question,
       questionVoteCount,
       answerVoteCount,
+      top10Questions,
       csrfToken: req.csrfToken(),
     });
   })
