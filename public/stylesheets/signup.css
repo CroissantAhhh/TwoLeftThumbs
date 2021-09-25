@@ -1,20 +1,19 @@
-.login_container {
-	/* background-color: white; */
+.register_container {
 	color: rgb(63, 177, 52);
 	background-color: rgba(135, 118, 118, 0.15);
 	backdrop-filter: blur(4.5px);
 	display: flex;
 	flex-direction: column;
 	width: 50%;
-	height: 30vh;
+	height: 40vh;
 	margin: 10% 30%;
 	border: 3px solid black;
 	border-radius: 15px;
-	padding: 30px 10% 20% 10%;
+	padding: 15px 10% 20% 10%;
 	text-decoration: none;
 }
 
-.login_title {
+.register_title {
 	padding-bottom: 15px;
 	font-weight: 700;
 	font-size: 27px;
@@ -24,11 +23,11 @@
 	text-decoration: none;
 }
 
-.login_form > * {
+.register_form > * {
 	padding: 9px;
 }
 
-.loginBtn {
+.RegisterBtn {
 	background-color: rgb(167, 3, 3);
 	color: linen;
 	width: 20%;
@@ -40,7 +39,7 @@
 	padding-top: 6px;
 }
 
-.cancelBtn {
+.demo_user {
 	background-color: rgb(167, 3, 3);
 	color: linen;
 	width: 20%;
@@ -53,7 +52,7 @@
 	border-radius: 0.25rem;
 }
 
-.noAccBtn {
+.cancelBtn {
 	background-color: rgb(167, 3, 3);
 	color: linen;
 	width: 20%;
