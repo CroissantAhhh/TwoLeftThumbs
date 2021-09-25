@@ -14,7 +14,8 @@ block content
         .askQuestion_container
             .askQuestion_btn Ask Question
         script(src="/javascripts/questionlist.js")
-        link(rel='stylesheet' href='/stylesheets/question-list.css')
 
     else
-        h2 Question not found
+        div.noQuestionContainer
+            p.noQuestion Question not found
+        link(rel='stylesheet' href='/stylesheets/question-list.css')
