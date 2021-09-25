@@ -4,19 +4,18 @@ include utils.pug
 
 block content
   div.register_container
-    h2.register_title Register
-    div.errors_container
+    div.errors_container.hidden
     form.register_form(action='/users' method='post')
+      h2.register_title Register
       input(type='hidden' name='_csrf' value=csrfToken)
-      +field('User Name', 'userName', user.userName)
-      +field('Email Address', 'email', user.email)
-      +field('Password', 'password', user.password, 'password')
-      +field('Confirm Password', 'confirmPassword', '', 'password')
+      .input_container
+        +field('User Name', 'userName', user.userName)
+        +field('Email Address', 'email', user.email)
+        +field('Password', 'password', user.password, 'password')
+        +field('Confirm Password', 'confirmPassword', '', 'password')
       div(class='py-4')
         button.RegisterBtn Register
         button.demo_user Demo User
         a.cancelBtn(href='/') Cancel
       script(src="/javascripts/register.js")
       link(rel='stylesheet' href='/stylesheets/signup.css')
-
-

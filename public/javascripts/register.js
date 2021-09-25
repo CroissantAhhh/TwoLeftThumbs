@@ -52,7 +52,7 @@ form.addEventListener("submit", async (e) => {
     emailInput.value = data.email;
     const userNameInput = document.querySelector("#userName");
     userNameInput.value = data.userName;
-    const errorsContainer = document.querySelector(".errors_container");
+    const errorsContainer = document.querySelector(".errors_container.hidden");
     let errorsHtml = [
       `
         <div class="alert alert-danger">
@@ -70,6 +70,7 @@ form.addEventListener("submit", async (e) => {
       );
     }
     errorsContainer.innerHTML = errorsHtml.join("");
+    errorsContainer.classList.remove("hidden");
   } else {
     alert(
       "Something went wrong. Please check your internet connection and try again!"
