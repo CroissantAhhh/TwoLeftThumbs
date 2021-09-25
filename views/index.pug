@@ -4,7 +4,53 @@ block content
   script(src="/javascripts/index.js")
   link(rel='stylesheet' href='/stylesheets/index.css')
   if locals.authenticated === false
-    div(class="background")
-
-      h1 Welcome to Two Left Thumbs!
-      a(class='btn btn-danger'  href="/questions") View Questions
+    .welcomePage_container
+      .welcomePage_content
+        .welcomePage_title
+          div
+            h1 Welcome to Two Left Thumbs
+        .welcomePage_img
+          img(src="https://i.imgur.com/mCGl69Y.png", alt="")
+        .welcomePage_discription
+          div
+            p
+              strong Two Left Thumbs
+              |  is a question and answer site for passionate videogamers on all platforms. It's built and run by you as part of the
+              a(href="https://stackexchange.com/")   Stack Exchange
+              |  network of sites. With your help, we're working together to build a library of detailed answers to every question about videogames and videogame consoles.
+          div
+            h2 Ask Questions, get answers, no distractions
+            p This site is all about
+              strong  getting answers.
+              |  It's not a discussion forum. There's no chit-chat. Just Questions and answers.
+            p Good answers are voted up and
+              strong rise to the top.
+              i  The best answers show up first so that they are always easy to find.
+          div
+            h2 Get answers to practical, detailed questions
+            p Focus on questions about an
+              strong  actual problem
+              |  you have faced. Include details about what you have tried and exactly what you are trying to do.
+            p Not all questions work well in our format. Avoid questions that are
+              strong  primarily opinion-based,
+              |  or that are likely to
+              strong  generate discussion
+              |  rather than answers.
+              i  Questions that need improvement may be
+              strong  closed
+              i  until someone fixes them.
+          div
+            h2 Improve posts by editing or commenting
+            p Our goal is to have the
+              strong  best answers
+              |  to every question, so if you see questions or answers that can be improved, you can
+              strong  edit
+              |  them.
+              i  Use edits to fix mistakes, improve formatting, or clarify the meaning of a post.
+            p Use
+              strong  comments
+              |  to ask for more information or clarify a question or answer.
+              i  You can always comment on
+              strong  your own
+              i  questions and answers. Once you earn 50 reputation, you can comment on anybody's post.
+            p Remember: we're all here to learn, so be friendly and helpful!
