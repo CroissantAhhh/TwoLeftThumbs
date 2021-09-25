@@ -1,21 +1,70 @@
-
- .login_container {
-  background-color: white;
-  display: flex;
-  width: 40%;
-  height: 40%;
-  margin: 10% 30%;
-  border: 3px solid black;
-  padding: 30px;
-}
-
-.login_form > * {
-  padding: 10px;
+.login_container {
+	/* background-color: white; */
+	color: rgb(63, 177, 52);
+	background-color: rgba(135, 118, 118, 0.15);
+	backdrop-filter: blur(4.5px);
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	height: 30vh;
+	margin: 10% 30%;
+	border: 3px solid black;
+	border-radius: 15px;
+	padding: 40px 10% 10% 110px;
+	text-decoration: none;
 }
 
 .login_title {
-  position: relative;
-  text-align: center;
-  top: 10%;
-  text-decoration: none;
+	padding-bottom: 15px;
+	font-weight: 700;
+	font-size: 27px;
+}
+
+.login_form > * {
+	padding: 9px;
+}
+
+.login_title {
+	position: relative;
+	text-align: center;
+	top: 10%;
+	text-decoration: none;
+}
+
+.loginBtn {
+	background-color: rgb(167, 3, 3);
+	color: linen;
+	width: 20%;
+	height: 30px;
+	padding: 10px;
+	text-decoration: none;
+	margin-left: 10px;
+	font-size: 14px;
+	padding-top: 6px;
+}
+
+.cancelBtn {
+	background-color: rgb(167, 3, 3);
+	color: linen;
+	width: 20%;
+	height: 30px;
+	padding: 6px;
+	margin-left: 20px;
+	text-decoration: none;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 0.25rem;
+}
+
+.noAccBtn {
+	background-color: rgb(167, 3, 3);
+	color: linen;
+	width: 20%;
+	height: 30px;
+	padding: 6px;
+	margin-left: 20px;
+	text-decoration: none;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 0.25rem;
 }
