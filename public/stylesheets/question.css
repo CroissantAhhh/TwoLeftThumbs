@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: rgb(167, 3, 3);
+  padding: 10px;
+}
 .questionPage_container {
   display: flex;
   width: 100%;
@@ -17,6 +22,33 @@
   flex-direction: column;
   box-sizing: border-box;
   padding: 10px;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.questionPageLeftLinks_container {
+  width: 95%;
+}
+
+.questionPage_home {
+  width: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.questionPage_about {
+  width: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.questionPage_team {
+  width: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .questionPage_middle {
@@ -327,5 +359,4 @@
   width: 8%;
   height: 30px;
   background-color: rgb(235, 239, 240);
-  /* padding: 10px; */
 }

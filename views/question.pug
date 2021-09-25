@@ -4,7 +4,13 @@ extends layout.pug
 block content
     .questionPage_container
         .questionPage_left
-            P Left
+            .questionPageLeftLinks_container
+                .questionPage_home
+                    a(href="/") Home
+                .questionPage_about
+                    a(href="/about") About
+                .questionPage_team
+                    a(href="/team") Meet The Team
         .questionPage_middle
             .questionTitle_container
                 h2 #{question.title}
