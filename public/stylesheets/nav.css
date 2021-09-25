@@ -1,77 +1,77 @@
 body {
-    background-color: rgb(219, 220, 221);
-    /* background-image: url("https://i.imgur.com/3PDavDM.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; */
-  }
-  button {
-    border: 0;
-    height: 30px;
-    border-radius: 0.25rem;
-    background: lightseagreen;
-    color: linen;
-    font-family: system-ui, sans-serif;
-    white-space: nowrap;
-    text-decoration: none;
-    padding: 0.25rem 0.5rem;
-    margin: 0.25rem;
-    cursor: pointer;
-  }
+  background-color: rgb(219, 220, 221);
+  background-image: url("https://i.imgur.com/3PDavDM.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+button {
+  border: 0;
+  height: 30px;
+  border-radius: 0.25rem;
+  background: rgb(167, 3, 3);
+  color: linen;
+  font-family: system-ui, sans-serif;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  cursor: pointer;
+}
 
-  nav {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-    background-color: black;
-    position: fixed;
-  }
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  background-color: black;
+  position: fixed;
+}
 
-  nav a {
-    color: linen;
-    text-decoration: none;
-  }
+nav a {
+  color: linen;
+  text-decoration: none;
+}
 
-  nav input {
-    background-color: linen;
-    width: 70%;
-    height: 30px;
-    border-radius: 0.25rem;
-  }
+nav input {
+  background-color: linen;
+  width: 70%;
+  height: 30px;
+  border-radius: 0.25rem;
+}
 
-  .nav_links {
-    display: flex;
-    width: 10%;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-evenly;
-  }
+.nav_links {
+  display: flex;
+  width: 10%;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+}
 
-  .nav_links a {
-    display: inline-flex;
-    width: 45%;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.25rem;
-  }
+.nav_links a {
+  display: inline-flex;
+  width: 45%;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+}
 
-  .nav_login {
-    background-color: linen;
-    color: lightseagreen;
-  }
+.nav_login {
+  background-color: linen;
+  color: lightseagreen;
+}
 
-  .nav_signup {
-    background-color: lightseagreen;
-  }
+.nav_signup {
+  background-color: lightseagreen;
+}
 
-  .nav_logout {
-    background-color: lightseagreen;
-    color: linen;
-    width: 45%;
-    height: 30px;
-    text-decoration: none;
-  }
+.nav_logout {
+  background-color: lightseagreen;
+  color: linen;
+  width: 100%;
+  height: 30px;
+  text-decoration: none;
+}

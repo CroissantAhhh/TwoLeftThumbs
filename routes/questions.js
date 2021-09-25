@@ -22,7 +22,16 @@ router.get(
   "/",
   requireAuth,
   asyncHandler(async (req, res) => {
-    const questions = await db.Question.findAll();
+    const questions = await db.Question.findAll({ include: ["answers", "votes"] });
+    questions.forEach((question) => {
+      let voteSum = 0;
+      for (let vote of question.votes) {
+        voteSum += vote.dir;
+      }
+      question.votes = voteSum;
+      question.answers = question.answers.length;
+    })
+    questions.sort((a, b) => b.votes - a.votes);
     res.render("question-list", { title: "Questions", questions });
   })
 );
@@ -110,6 +119,7 @@ router.get(
       });
       answerVoteCount.push([answer, voteCount]);
     });
+    answerVoteCount.sort((a, b) => b[1] - a[1]);
     question.votes.forEach((vote) => {
       questionVoteCount += vote.dir;
     });
