@@ -43,9 +43,10 @@ form.addEventListener("submit", async (e) => {
       );
     }
     errorsContainer.innerHTML = errorsHtml.join("");
+    errorsContainer.classList.remove("hidden");
   } else {
     alert(
       "Something went wrong. Please check your internet connection and try again!"
     );
-}
+  }
 });

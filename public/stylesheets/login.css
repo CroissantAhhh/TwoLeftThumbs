@@ -1,67 +1,131 @@
-.login_container {
-	/* background-color: white; */
-	color: rgb(63, 177, 52);
-	background-color: rgba(135, 118, 118, 0.15);
-	backdrop-filter: blur(4.5px);
+::placeholder {
+  color: rgb(167, 3, 3);
+}
+
+.errors_container {
+	width: 60%;
+	background-color: white;
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	flex-direction: column;
-	width: 50%;
-	height: 30vh;
-	margin: 10% 30%;
-	border: 3px solid black;
+	padding: 10px;
+	border: 3px solid rgb(167, 3, 3);
 	border-radius: 15px;
-	padding: 30px 10% 20% 10%;
-	text-decoration: none;
+	margin-bottom: 10px;
+  }
+
+  .errors_container.hidden {
+	display: none;
+  }
+
+  .errors_container * {
+	padding: 5px;
+  }
+
+.login_container {
+  color: rgb(167, 3, 3);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  border-radius: 15px;
+  text-decoration: none;
 }
 
 .login_title {
-	padding-bottom: 15px;
-	font-weight: 700;
-	font-size: 27px;
-	position: relative;
-	text-align: center;
-	top: 10%;
-	text-decoration: none;
+  padding-bottom: 15px;
+  font-weight: 700;
+  font-size: 27px;
+  position: relative;
+  text-align: center;
+  top: 10%;
+  text-decoration: none;
 }
 
 .login_form > * {
-	padding: 9px;
+  padding: 10px;
 }
 
 .loginBtn {
-	background-color: rgb(167, 3, 3);
-	color: linen;
-	width: 20%;
-	height: 30px;
-	padding: 10px;
-	text-decoration: none;
-	margin-left: 10px;
-	font-size: 14px;
-	padding-top: 6px;
+  background-color: rgb(167, 3, 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: linen;
+  width: 10%;
+  height: 30px;
+  padding: 10px;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 14px;
+  padding-top: 6px;
 }
 
 .cancelBtn {
-	background-color: rgb(167, 3, 3);
-	color: linen;
-	width: 20%;
-	height: 30px;
-	padding: 6px;
-	margin-left: 20px;
-	text-decoration: none;
-	font-size: 14px;
-	cursor: pointer;
-	border-radius: 0.25rem;
+  background-color: rgb(167, 3, 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: linen;
+  width: 10%;
+  height: 30px;
+  padding: 6px;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0.25rem;
 }
 
 .noAccBtn {
-	background-color: rgb(167, 3, 3);
-	color: linen;
-	width: 20%;
-	height: 30px;
-	padding: 6px;
-	margin-left: 20px;
-	text-decoration: none;
-	font-size: 14px;
-	cursor: pointer;
-	border-radius: 0.25rem;
+  background-color: rgb(167, 3, 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: linen;
+  width: 10%;
+  height: 30px;
+  padding: 6px;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+form {
+  width: 60%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  border: 3px solid rgb(167, 3, 3);
+  border-radius: 15px;
+}
+
+.input_container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group {
+  width: 60%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+}
+
+.py-4 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

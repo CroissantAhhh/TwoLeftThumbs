@@ -4,14 +4,16 @@ include utils.pug
 
 block content
   div.login_container
-    h2.login_title Login
-    div.errors_container
+    div.errors_container.hidden
     form.login_form
+      h2.login_title Login
       input(type='hidden' name='_csrf' value=csrfToken)
-      +field('Email Address', 'email', email )
-      +field('Password', 'password', null, 'password' )
-      button.loginBtn Login
-      a.cancelBtn(href='/') Cancel
-      a.noAccBtn(href='/users/register') Don't have an account?
+      .input_container
+        +field('Email Address', 'email', email )
+        +field('Password', 'password', null, 'password' )
+      div(class='py-4')
+        button.loginBtn Login
+        a.cancelBtn(href='/') Cancel
+        a.noAccBtn(href='/users/register') Sign Up
     script(src="/javascripts/login.js")
     link(rel='stylesheet' href='/stylesheets/login.css')
