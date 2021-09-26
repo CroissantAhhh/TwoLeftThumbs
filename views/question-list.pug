@@ -6,7 +6,7 @@ block content
             .questions_container
                 .askQuestion_container
                     h2.questions_title Questions
-                    .askQuestion_btn Ask Question
+                    a(href=`questions/add`).askQuestion_btn Ask Question
                 each question in questions
                     .result_container
                         .question_votes_container
@@ -17,13 +17,10 @@ block content
                             h3.question_answers answers
                         .each_question
                             a(id="question" href=`/questions/${question.id}`) #{question.title}
-                script(src="/javascripts/questionlist.js")
-
         else
             .noQuestionContainer
-                p.noQuestion Question not found
+                p.noQuestion No Results Found
                 div.noQuestion_Btn_Container
-                    .askQuestion_btn Ask Question
-                    .backToQuestions_btn Back to Questions
+                    a(href="/questions").askQuestion_btn Back
     link(rel='stylesheet' href='/stylesheets/question-list.css')
     script(src="/javascripts/questionlist.js")
