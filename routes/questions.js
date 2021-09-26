@@ -230,15 +230,20 @@ router.get(
 
 // post question delete
 router.delete(
-  "/:id(\\d+)",
-  requireAuth,
+  "/:id/",
   csrfProtection,
+  requireAuth,
   asyncHandler(async (req, res) => {
     const questionId = parseInt(req.params.id, 10);
+    const answers = await db.Answer.findAll({ where: { questionId } });
+    console.log(answers)
+    answers.forEach(async (answer) => {
+      let answerId = answer.id;
+      await db.Vote.destroy({ where: { answerId } });
+    });
+    await db.Vote.destroy({ where: { questionId } });
+    await db.Answer.destroy({ where: { questionId } });
     const question = await db.Question.findByPk(questionId);
-
-    checkPermissions(question, req.session.auth.userId);
-
     await question.destroy();
     res.status(200).json();
   })

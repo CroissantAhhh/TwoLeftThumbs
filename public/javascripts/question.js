@@ -74,6 +74,22 @@ questionDownVote.addEventListener("click", async (e) => {
   window.location.href = `/questions/${questionId}`;
 });
 
+questionDelete.addEventListener("click", async (e) => {
+  const id = e.target.dataset.id;
+  const body = { _csrf };
+  const res = await fetch(`/questions/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (res.status === 200) {
+    window.location.href = "/questions";
+  }
+});
+
 answerDelete.forEach((answer) => {
   answer.addEventListener("click", async (e) => {
     id = e.target.dataset.id;
