@@ -1,0 +1,58 @@
+.team_container {
+	color: rgb(167, 3, 3);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 80vh;
+	text-decoration: none;
+}
+
+.team_container_body {
+	width: 60%;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: row;
+	height: 100%;
+	width: 80%;
+	padding: 10px;
+	border: 3px solid rgb(167, 3, 3);
+	border-radius: 15px;
+	margin-bottom: 10px;
+}
+
+.team1,
+.team2,
+.team3,
+.team4 {
+	width: 15vh;
+	height: 20vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 1px 3px 8px 0 grey;
+	transition: 0.2s;
+	background: white;
+	border-radius: 5%;
+}
+
+.team1:hover,
+.team2:hover,
+.team3:hover,
+.team4:hover {
+	cursor: pointer;
+	box-shadow: 1px 3px 8px 0 grey;
+	width: 25vh;
+	height: 35vh;
+}
+
+.teamImg1,
+.teamImg2,
+.teamImg3,
+.teamImg4 {
+	border-radius: 50%;
+}

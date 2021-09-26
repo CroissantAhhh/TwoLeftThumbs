@@ -14,6 +14,7 @@ const answersRouter = require("./routes/answers");
 const votesRouter = require("./routes/votes");
 const searchRouter = require("./routes/search");
 const aboutRouter = require("./routes/about");
+const teamRouter = require("./routes/team");
 const { environment, sessionSecret } = require("./config");
 const { restoreUser } = require("./auth");
 
@@ -29,12 +30,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const store = new SequelizeStore({ db: sequelize });
 app.use(
-  session({
-    secret: sessionSecret,
-    store,
-    saveUninitialized: false,
-    resave: true,
-  })
+	session({
+		secret: sessionSecret,
+		store,
+		saveUninitialized: false,
+		resave: true,
+	})
 );
 store.sync();
 app.use(restoreUser);
@@ -45,17 +46,18 @@ app.use("/answers", answersRouter);
 app.use("/votes", votesRouter);
 app.use("/search", searchRouter);
 app.use("/about", aboutRouter);
+app.use("/team", teamRouter);
 
 app.use(function (req, res, next) {
-  next(createError(404));
+	next(createError(404));
 });
 
 app.use(function (err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
+	res.locals.message = err.message;
+	res.locals.error = req.app.get("env") === "development" ? err : {};
 
-  res.status(err.status || 500);
-  res.render("error");
+	res.status(err.status || 500);
+	res.render("error");
 });
 
 module.exports = app;
