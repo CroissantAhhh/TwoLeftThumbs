@@ -21,12 +21,12 @@
 
 .ask_question_container {
     max-width: 600px;
-    background-color: white;
+    background-color: rgba(24, 24, 24, 0.9);
     margin-left: 1.5em;
     border-radius: 3px;
     padding-bottom: .15em;
     max-width: auto;
-    box-shadow: 0px 0px 4px 2px rgb(191, 191, 191);
+    box-shadow: 1px 1px 4px 2px rgba(97, 83, 2, 0.742);
 }
 
 .question_title_container{
@@ -35,9 +35,13 @@
     flex-direction: column;
 }
 
+.title_and_body{
+    color: white;
+}
+
 #title_description{
     font-size: 12px;
-    color: rgb(77, 76, 76);
+    color: rgb(113, 113, 113);
     margin-top: .3em;
     margin-bottom: -.7em;
 }
@@ -46,12 +50,13 @@
     margin-top: .75em;
     width: 565px;
     height: 35px;
-    border-top: 1px solid rgb(194, 193, 193);
-    border-right: 1px solid rgb(194, 193, 193);;
-    border-left: 1px solid rgb(194, 193, 193);
-    border-bottom: 1px solid rgb(194, 193, 193);
+    border-top: 1px solid rgb(133, 133, 133);
+    border-right: 1px solid rgb(133, 133, 133);
+    border-left: 1px solid rgb(133, 133, 133);
+    border-bottom: 1px solid rgb(133, 133, 133);
     border-radius: 3px;
-    color: rgb(94, 94, 94);
+    color: rgb(181, 181, 181);
+    background-color: rgba(24, 24, 24);
     padding-left: .7em;
 }
 
@@ -63,15 +68,18 @@
 
 .question_body_container #body{
     margin-top: 1em;
-    /* margin-bottom: 1em */
+    color: rgb(181, 181, 181);
+    background-color: rgba(24, 24, 24, 0.9);;
     width: 565px;
     height: 350px;
-    border-top: 1px solid rgb(194, 193, 193);
-    border-right: 1px solid rgb(194, 193, 193);;
-    border-left: 1px solid rgb(194, 193, 193);
-    border-bottom: 1px solid rgb(194, 193, 193);
+    border-top: 1px solid rgb(133, 133, 133);
+    border-right: 1px solid rgb(133, 133, 133);
+    border-left: 1px solid rgb(133, 133, 133);
+    border-bottom: 1px solid rgb(133, 133, 133);
     border-radius: 3px;
 }
+
+
 
 .ask_question_buttons_container{
     display: flex;
@@ -97,7 +105,7 @@
     font-size: 14px;
     align-self: center;
     margin-right: .6em;
-    color: rgb(77, 76, 76);
+    color: rgb(121, 121, 121);
 }
 
 .cancel_button:hover{
@@ -117,24 +125,24 @@
     width: 20em;
     height: 8.1em;
     margin-left: 2em;
-    box-shadow: 0px 0px 4px 2px rgb(191, 191, 191);
+    box-shadow: 0px -2px 7px 2px rgba(52, 22, 85, 0.66);
 }
 
 .question_step_container{
-    background-color: rgb(235, 239, 240);
+    background-color: rgb(43, 43, 43);
     padding: 1em;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    border-bottom: 1px solid rgb(216, 216, 216);
+    border-bottom: 1px solid rgb(133, 133, 133);
 }
 
 #question_step{
     font-size: 14px;
-    color: rgb(77, 76, 76);
+    color: rgb(133, 133, 133);
 }
 
 .question_step_description_container{
-    background-color: rgb(248, 248, 250);
+    background-color: rgba(24, 24, 24, 0.9);
     padding-left: 1em;
     padding-right: 1em;
     padding-bottom: 1em;
@@ -146,29 +154,29 @@
 
 #question_step_description{
     font-size: 12px;
-    color: rgb(65, 65, 65);
+    color: rgb(133, 133, 133);
 }
 
 .helpful_links_container{
     width: 20em;
-    height: 10em;
+    height: 9.8em;
     margin-top: 1em;
     margin-left: 2em;
-    box-shadow: 0px 0px 4px 2px rgb(191, 191, 191);
+    box-shadow: 0px 3px 4px 2px rgba(114, 27, 27, 0.564);
 
 }
 
 .helpful_link_box{
-    background-color: rgb(235, 239, 240);
+    background-color: rgb(43, 43, 43);
     padding: 1em;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    border-bottom: 1px solid rgb(216, 216, 216);
+    border-bottom: 1px solid rgb(133, 133, 133);
 }
 
 #link_box_title{
     font-size: 14px;
-    color: rgb(77, 76, 76);
+    color: rgb(133, 133, 133);
 }
 
 .link_box{
@@ -188,17 +196,17 @@
     justify-content: space-around;
     height: 6.78em;
     padding: 1em;
-    background-color: rgb(248, 248, 250);
+    background-color: rgba(24, 24, 24, 0.9);
 }
 
 .good_question{
     font-size: 12px;
-    color: rgb(65, 65, 65);
+    color: rgb(133, 133, 133);
 }
 
 .good_questions_link{
     font-size: 12px;
-    color: rgb(167, 3, 3);
+    color: rgb(53, 105, 150);
     border-bottom-style: hidden;
 }
 
@@ -213,17 +221,17 @@
 }
 .good_questions_link:hover{
     text-decoration: none;
-    color: rgb(167, 3, 3);;
+    color: rgb(37, 172, 222);
 }
 
 .lfg{
     font-size: 12px;
-    color: rgb(65, 65, 65);
+    color: rgb(133, 133, 133);
 }
 
 .lfg_link{
     font-size: 12px;
-    color: rgb(167, 3, 3);
+    color: rgb(53, 105, 150);
     border-bottom-style: hidden;
 }
 
@@ -238,6 +246,6 @@
 }
 .lfg_link:hover{
     font-size: 12px;
-    color: rgb(167, 3, 3);
+    color: rgb(37, 172, 222);
     text-decoration: none;
 }
