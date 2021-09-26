@@ -6,9 +6,10 @@
 
 .questions_container {
 	display: flex;
+	color: rgb(148, 3, 3);
 	width: 75%;
 	flex-direction: column;
-	background-color: rgba(24, 24, 24, 0.9);
+	background-color: white;
 	backdrop-filter: blur(4.5px);
 	box-shadow: 0px 0px 8px 1px rgba(116, 94, 8, 0.386);
 }
@@ -58,7 +59,7 @@
 }
 
 .questions_title {
-	color: rgb(206, 206, 206);
+	color: rgb(148, 3, 3);
 	font-size: 36px;
 	margin-left: 0.6em;
 }
@@ -73,7 +74,7 @@
 
 .result_container #question {
 	text-decoration: none;
-	color: rgb(206, 206, 206);
+	color: rgb(148, 3, 3);
 }
 
 .question_votes_container {
@@ -86,7 +87,7 @@
 }
 
 .question_votes_number {
-	color: rgb(206, 206, 206);
+	color: rgb(148, 3, 3);
 	font-size: 18px;
 	margin-left: 0.5em;
 	margin-right: 0.5em;
@@ -95,7 +96,7 @@
 }
 
 .question_votes {
-	color: rgb(206, 206, 206);
+	color: rgb(148, 3, 3);
 	font-size: 12px;
 	margin-left: 0.5em;
 	margin-right: 0.5em;
@@ -113,7 +114,7 @@
 }
 
 .question_answers_number {
-	color: rgb(206, 206, 206);
+	color: rgb(148, 3, 3);
 	font-size: 18px;
 	margin-left: 0.5em;
 	margin-right: 0.5em;
@@ -122,7 +123,7 @@
 }
 
 .question_answers {
-	color: rgb(206, 206, 206);
+	color: rgb(148, 3, 3);
 	font-size: 12px;
 	margin-left: 0.5em;
 	margin-right: 0.5em;
@@ -139,7 +140,7 @@
 }
 
 .each_question > #question:hover {
-	color: rgba(255, 255, 255, 0.968);
+	color: rgb(113, 4, 4);
 }
 
 .noQuestionContainer {
