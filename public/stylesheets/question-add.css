@@ -6,10 +6,10 @@
 
 .page_title_container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     height: 5em;
-    width: 37.5em;
-    margin-left: 16.2%;
+    width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
 }
@@ -17,16 +17,18 @@
 #ask_a_question {
     color: white;
     font-size: 25px;
+    margin-right: 49rem;
 }
 
 .ask_question_container {
     max-width: 600px;
-    background-color: rgba(24, 24, 24, 0.9);
+    background-color: rgba(24, 24, 24, 0.85);
+    backdrop-filter: blur(4.5px);
     margin-left: 1.5em;
     border-radius: 3px;
     padding-bottom: .15em;
     max-width: auto;
-    box-shadow: 1px 1px 4px 2px rgba(97, 83, 2, 0.742);
+    box-shadow: 1px 1px 4px 2px rgba(97, 83, 2, 0.42);
 }
 
 .question_title_container{
@@ -56,7 +58,7 @@
     border-bottom: 1px solid rgb(133, 133, 133);
     border-radius: 3px;
     color: rgb(181, 181, 181);
-    background-color: rgba(24, 24, 24);
+    background-color: rgba(24, 24, 24, 0.25);
     padding-left: .7em;
 }
 
@@ -69,7 +71,7 @@
 .question_body_container #body{
     margin-top: 1em;
     color: rgb(181, 181, 181);
-    background-color: rgba(24, 24, 24, 0.9);;
+    background-color: rgba(24, 24, 24, 0.25);;
     width: 565px;
     height: 350px;
     border-top: 1px solid rgb(133, 133, 133);
@@ -118,7 +120,6 @@
     justify-content: space-between;
     height: 20em;
     width: 25em;
-    /* border: 1px solid black; */
 }
 
 .question_instructions_container{
@@ -143,6 +144,7 @@
 
 .question_step_description_container{
     background-color: rgba(24, 24, 24, 0.9);
+    backdrop-filter: blur(4.5px);
     padding-left: 1em;
     padding-right: 1em;
     padding-bottom: 1em;
@@ -197,6 +199,7 @@
     height: 6.78em;
     padding: 1em;
     background-color: rgba(24, 24, 24, 0.9);
+    backdrop-filter: blur(4.5px);
 }
 
 .good_question{

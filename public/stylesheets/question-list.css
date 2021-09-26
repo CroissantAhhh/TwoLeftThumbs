@@ -22,7 +22,7 @@
 }
 
 .askQuestion_btn {
-	background-color: rgb(167, 3, 3);
+	background-color: rgb(148, 3, 3);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,6 +33,10 @@
 	text-decoration: none;
 	border-radius: 0.25rem;
 	margin-right: 1.5em;
+}
+
+.askQuestion_btn:hover{
+	background-color: rgb(113, 4, 4);
 }
 
 .questions_title {
@@ -118,6 +122,10 @@
 	flex-wrap: wrap;
 	max-width: 40em;
 	padding-left: 1.5em;
+}
+
+.each_question > #question:hover{
+	color: rgba(255, 255, 255, 0.968);
 }
 
 .noQuestionContainer {
