@@ -3,13 +3,19 @@ extends layout.pug
 include utils.pug
 
 block content
-  div.errors_container
-  form.edit_question(action=`/questions/${question.id}` method='post')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    +field('Title', 'title', question.title)
-    label(for="body")= "Body"
-    textarea(id="body" name="body") #{question.body}
-    div(class='py-4')
-      button(type='submit' class='btn btn-primary') Edit Question
-      a(class='btn btn-danger'  href=`/`) Cancel
-    script(src="/javascripts/editquestion.js")
+  .editForm_container
+    .errors_container.hidden
+    form.add_answer(action=`/questions/${question.id}` method='post' data-id=question.id)
+      input(type='hidden' name='_csrf' value=csrfToken)
+      .yourAnswer_container
+        .label_container
+          h2 Title
+        input(type="text", name="title", value=question.title, class="question_title" id="title")
+        .label_container
+          h2 Body
+        textarea(id="body" name="body") #{question.body}
+      .addAnswerBtn_container
+        button(type='submit' class='addAnswer_btn') Edit Question
+        a(class='addAnswer_btn'  href=`/`) Cancel
+  script(src="/javascripts/editquestion.js")
+  link(rel='stylesheet' href='/stylesheets/question-edit.css')

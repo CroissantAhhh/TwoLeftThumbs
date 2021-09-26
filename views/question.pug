@@ -33,7 +33,7 @@ block content
                 .questionBody_text #{question.body}
             if locals.user.id === question.userId
                     div.question_options
-                        .question_edit(data-id=`${question.id}`) Edit
+                        a(href=`/questions/${question.id}/edit`).question_edit(data-id=`${question.id}`) Edit
                         .question_delete(data-id=`${question.id}`) Delete
             .totalAnswers_container
                 h2 #{answerVoteCount.length} Answers
