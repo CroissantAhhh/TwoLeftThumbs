@@ -1,124 +1,124 @@
 ::placeholder {
-  color: rgb(167, 3, 3);
+	color: rgb(167, 3, 3);
 }
 
 .errors_container {
-  width: 60%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  border: 3px solid rgb(167, 3, 3);
-  border-radius: 15px;
-  margin-bottom: 10px;
+	width: 60%;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	border: 3px solid rgb(167, 3, 3);
+	border-radius: 15px;
+	margin-bottom: 10px;
 }
 
 .errors_container.hidden {
-  display: none;
+	display: none;
 }
 
 .errors_container * {
-  padding: 5px;
+	padding: 5px;
 }
 
 .register_container {
-  color: rgb(167, 3, 3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  text-decoration: none;
+	color: rgb(167, 3, 3);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	text-decoration: none;
 }
 
 .register_title {
-  padding-bottom: 15px;
-  font-weight: 700;
-  font-size: 27px;
-  text-align: center;
-  top: 10%;
-  text-decoration: none;
+	padding-bottom: 15px;
+	font-weight: 700;
+	font-size: 27px;
+	text-align: center;
+	top: 10%;
+	text-decoration: none;
 }
 
 .register_form > * {
-  padding: 10px;
+	padding: 10px;
 }
 
 .RegisterBtn {
-  background-color: rgb(167, 3, 3);
-  color: linen;
-  width: 10%;
-  height: 30px;
-  padding: 10px;
-  text-decoration: none;
-  margin-left: 10px;
-  font-size: 14px;
-  padding-top: 6px;
+	background-color: rgb(167, 3, 3);
+	color: linen;
+	width: 10%;
+	height: 30px;
+	padding: 10px;
+	text-decoration: none;
+	margin-left: 10px;
+	font-size: 14px;
+	padding-top: 6px;
 }
 
 .demo_user {
-  background-color: rgb(167, 3, 3);
-  color: linen;
-  width: 10%;
-  height: 30px;
-  padding: 6px;
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 0.25rem;
+	background-color: rgb(167, 3, 3);
+	color: linen;
+	width: 13%;
+	height: 30px;
+	padding: 6px;
+	margin-left: 20px;
+	text-decoration: none;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 0.25rem;
 }
 
 .cancelBtn {
-  background-color: rgb(167, 3, 3);
-  display: flex;
-  color: linen;
-  align-items: center;
-  justify-content: center;
-  width: 10%;
-  height: 30px;
-  padding: 6px;
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 0.25rem;
+	background-color: rgb(167, 3, 3);
+	display: flex;
+	color: linen;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+	height: 30px;
+	padding: 6px;
+	margin-left: 20px;
+	text-decoration: none;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 0.25rem;
 }
 
 form {
-  width: 60%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  border: 3px solid rgb(167, 3, 3);
-  border-radius: 15px;
+	width: 60%;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	border: 3px solid rgb(167, 3, 3);
+	border-radius: 15px;
 }
 
 .input_container {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .form-group {
-  width: 60%;
+	width: 60%;
 }
 
 .form-control {
-  width: 100%;
-  padding: 10px;
-  margin: 5px;
+	width: 100%;
+	padding: 10px;
+	margin: 5px;
 }
 
 .py-4 {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
