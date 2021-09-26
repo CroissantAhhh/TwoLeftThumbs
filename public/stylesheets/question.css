@@ -152,6 +152,7 @@ a {
   border-radius: 0.25rem;
   box-sizing: border-box;
   margin: 0px 5px;
+  cursor: pointer;
 }
 
 .question_upVote {
