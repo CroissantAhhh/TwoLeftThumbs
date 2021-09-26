@@ -1,15 +1,37 @@
 extends layout.pug
 
-include utils.pug
-
 block content
-  div.errors_container
-  form.edit_question(action=`/questions/${question.id}` method='post')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    +field('Title', 'title', question.title)
-    label(for="body")= "Body"
-    textarea(id="body" name="body") #{question.body}
-    div(class='py-4')
-      button(type='submit' class='btn btn-primary') Edit Question
-      a(class='btn btn-danger'  href=`/`) Cancel
-    script(src="/javascripts/editquestion.js")
+  .page_title_container
+    h2#edit_your_question Edit your question
+    .errors_container
+  .edit_question_body_container
+    .edit_question_container
+      form.edit_question(action=`/questions/${question.id}` method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        .question_title_container
+          label(for="title" class="title_and_body")= "Title"
+            p#title_description Be specific and imagine you’re asking a question to another person
+          input(type="text" id="title_input" name="title" value=`${question.title}`)
+        .question_body_container
+          label(for="body" class="title_and_body")= "Body"
+            h2#title_description Include all the information someone would need to answer your question
+          textarea(id="body" name="body") #{question.body}
+        div(class='edit_question_buttons_container')
+          button(type='submit' class='edit_button') Edit Question
+          a(href=`/questions` class='cancel_button') Cancel
+        script(src="/javascripts/editquestion.js")
+    .sideboxes_container
+      .edit_instructions_container
+        .edit_step_container
+          h2#edit_step Step 1: Edit your question
+        .edit_step_description_container
+          p#edit_step_description The community is here to help you with questions about gaming. Provide details and share research with your question.
+      .helpful_links_container
+        .helpful_link_box
+          h2#link_box_title Helpful links
+        .help_links
+          h4.good_question Find more information about
+            a(class='good_questions_link' href='https://www.dummies.com/careers/find-a-job/interviews/ten-tips-for-asking-good-questions/')  how to to ask a good question here
+          h4.lfg Find gamers to
+            a(class='lfg_link' href='https://lfg-network.com/')  play alongside with here
+  link(rel='stylesheet' href='/stylesheets/question-edit.css')

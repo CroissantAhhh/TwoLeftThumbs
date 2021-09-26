@@ -90,7 +90,7 @@
     margin: .5em;
 }
 
-.edit_question{
+.edit_button{
     color: white;
     background-color: rgb(181, 0, 0);
     margin-left: .6em;
@@ -99,7 +99,7 @@
     font-size: 12px;
 }
 
-.edit_question:hover{
+.edit_button:hover{
     background-color: rgb(148, 3, 3);
 }
 
