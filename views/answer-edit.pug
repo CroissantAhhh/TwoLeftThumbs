@@ -10,7 +10,7 @@ block content
             .yourAnswer_container
                 div
                     h2 Edit Answer
-                textarea(id="body" name="body")
+                textarea(id="body" name="body") #{answer.body}
             .addAnswerBtn_container
                 button(type='submit' class='addAnswer_btn') Update
     link(rel='stylesheet' href='/stylesheets/question-edit.css')
