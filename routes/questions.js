@@ -22,7 +22,9 @@ router.get(
   "/",
   requireAuth,
   asyncHandler(async (req, res) => {
-    const questions = await db.Question.findAll({ include: ["answers", "votes"] });
+    const questions = await db.Question.findAll({
+      include: ["answers", "votes"],
+    });
     questions.forEach((question) => {
       let voteSum = 0;
       for (let vote of question.votes) {
@@ -30,7 +32,7 @@ router.get(
       }
       question.votes = voteSum;
       question.answers = question.answers.length;
-    })
+    });
     questions.sort((a, b) => b.votes - a.votes);
     res.render("question-list", { title: "Questions", questions });
   })
@@ -104,8 +106,10 @@ router.get(
   asyncHandler(async (req, res) => {
     let questionVoteCount = 0;
     let answerVoteCount = [];
+    let voted = { question: 0 };
+    const { userId } = req.session.auth;
     const questionId = parseInt(req.params.id, 10);
-    const topQuestions = await db.Question.findAll({include: ["answers"]})
+    const topQuestions = await db.Question.findAll({ include: ["answers"] });
     const question = await db.Question.findByPk(questionId, {
       include: ["answers", "votes"],
     });
@@ -113,24 +117,35 @@ router.get(
       where: { questionId },
       include: ["votes"],
     });
+
+    question.votes.forEach((vote) => {
+      if (vote.userId === userId) {
+        voted.question = vote.dir;
+      }
+    });
+
     answers.forEach((answer) => {
-      let voteCount = 0;
+      let voteCount = [0, 0];
       answer.votes.forEach((vote) => {
-        voteCount += vote.dir;
+        voteCount[0] += vote.dir;
+        if (userId === vote.userId) {
+          voteCount[1] = vote.dir;
+        }
       });
       answerVoteCount.push([answer, voteCount]);
     });
     answerVoteCount.sort((a, b) => b[1] - a[1]);
-    topQuestions.sort((a, b) => b.answers.length - a.answers.length)
-    let top10Questions = []
+    topQuestions.sort((a, b) => b.answers.length - a.answers.length);
+    let top10Questions = [];
     for (let i = 0; i < 10; i++) {
-      top10Questions = [...top10Questions, topQuestions[i]]
+      top10Questions = [...top10Questions, topQuestions[i]];
     }
     question.votes.forEach((vote) => {
       questionVoteCount += vote.dir;
     });
     res.render("question", {
       question,
+      voted,
       questionVoteCount,
       answerVoteCount,
       top10Questions,

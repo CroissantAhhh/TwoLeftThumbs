@@ -17,11 +17,19 @@ block content
                 .askQuestion_btn Ask Question
             .questionBody_container
                 .questionVote_container
-                    .question_upVote(data-id=`${question.id}`)
-                        i.fa.fa-caret-up(data-id=`${question.id}`)
+                    if voted.question === 1
+                        .question_upVote(data-id=`${question.id}`)
+                            i.fa.fa-caret-up.voted(data-id=`${question.id}`)
+                    else
+                        .question_upVote(data-id=`${question.id}`)
+                            i.fa.fa-caret-up(data-id=`${question.id}`)
                     div #{questionVoteCount}
-                    .question_downVote(data-id=`${question.id}`)
-                        i.fa.fa-caret-down(data-id=`${question.id}`)
+                    if voted.question === -1
+                        .question_downVote(data-id=`${question.id}`)
+                            i.fa.fa-caret-down.voted(data-id=`${question.id}`)
+                    else
+                        .question_downVote(data-id=`${question.id}`)
+                            i.fa.fa-caret-down(data-id=`${question.id}`)
                 .questionBody_text #{question.body}
             if locals.user.id === question.userId
                     div.question_options
@@ -32,11 +40,19 @@ block content
             each answer in answerVoteCount
                 .answerBody_container
                     .answerVote_container
-                        .answer_upVote(data-id=`${answer[0].id}`)
-                            i.fa.fa-caret-up(data-id=`${answer[0].id}`)
-                        div #{answer[1]}
-                        .answer_downVote(data-id=`${answer[0].id}`)
-                            i.fa.fa-caret-down(data-id=`${answer[0].id}`)
+                        if answer[1][1] === 1
+                            .answer_upVote(data-id=`${answer[0].id}`)
+                                i.fa.fa-caret-up.voted(data-id=`${answer[0].id}`)
+                        else
+                            .answer_upVote(data-id=`${answer[0].id}`)
+                                i.fa.fa-caret-up(data-id=`${answer[0].id}`)
+                        div #{answer[1][0]}
+                        if answer[1][1] === -1
+                            .answer_downVote(data-id=`${answer[0].id}`)
+                                i.fa.fa-caret-down.voted(data-id=`${answer[0].id}`)
+                        else
+                            .answer_downVote(data-id=`${answer[0].id}`)
+                                i.fa.fa-caret-down(data-id=`${answer[0].id}`)
                     .answerBody_text #{answer[0].body}
                         if locals.user.id === answer[0].userId
                             div.question_options

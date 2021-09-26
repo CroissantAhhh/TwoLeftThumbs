@@ -3,6 +3,11 @@ a {
   color: rgb(167, 3, 3);
   padding: 10px;
 }
+
+.voted {
+  color: rgb(167, 3, 3);
+}
+
 .questionPage_container {
   display: flex;
   width: 100%;
@@ -147,6 +152,7 @@ a {
   border-radius: 0.25rem;
   box-sizing: border-box;
   margin: 0px 5px;
+  cursor: pointer;
 }
 
 .question_upVote {

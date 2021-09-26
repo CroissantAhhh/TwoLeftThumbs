@@ -15,7 +15,7 @@ router.post(
     const { body, questionId } = req.body;
     const { userId } = req.session.auth;
 
-    console.log(req.body)
+    console.log(req.body);
 
     const answer = await db.Answer.build({
       body,
@@ -48,11 +48,15 @@ router.post(
 router.delete(
   "/:id",
   csrfProtection,
-  asyncHandler(async (req, res) => {
+  requireAuth,
+  asyncHandler(async (req, res, next) => {
     const id = parseInt(req.params.id, 10);
+    const answerId = id;
+    await db.Vote.destroy({ where: { answerId } });
     const answer = await db.Answer.findByPk(id);
-    await answer.destroy();
-    res.redirect(`/questions/${answer.questionId}`);
+    const questionId = answer.questionId;
+    answer.destroy();
+    res.status(200).json()
   })
 );
 
