@@ -144,6 +144,7 @@
 
 .noQuestionContainer {
 	width: 60%;
+	color: rgb(167, 3, 3);
 	background-color: white;
 	display: flex;
 	align-items: center;
