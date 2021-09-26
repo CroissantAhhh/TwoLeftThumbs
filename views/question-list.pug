@@ -11,9 +11,9 @@ block content
                     h3.question_votes Votes: #{question.votes}
                     h3.question_answers Answers: #{question.answers}
                     a(href=`/questions/${question.id}`) #{question.title}
-        .askQuestion_container
-            .askQuestion_btn Ask Question
+
         script(src="/javascripts/questionlist.js")
+        link(rel='stylesheet' href='/stylesheets/question-list.css')
 
     else
         div.noQuestionContainer
