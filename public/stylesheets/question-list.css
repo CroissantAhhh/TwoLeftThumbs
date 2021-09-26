@@ -39,6 +39,24 @@
 	background-color: rgb(113, 4, 4);
 }
 
+.backToQuestions_btn {
+	background-color: rgb(148, 3, 3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: linen;
+	font-size: 12px;
+	width: 12em;
+	height: 2.7em;
+	text-decoration: none;
+	border-radius: 0.25rem;
+	margin-right: 1.5em;
+}
+
+.backToQuestions_btn:hover {
+	background-color: rgb(113, 4, 4);
+}
+
 .questions_title {
 	color: rgb(206, 206, 206);
 	font-size: 36px;
@@ -136,4 +154,16 @@
 	border-radius: 15px;
 	margin-top: 16%;
 	margin-bottom: 10px;
+}
+
+.noQuestion {
+	font-size: 25px;
+}
+
+.noQuestion_Btn_Container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-left: 1em;
 }
