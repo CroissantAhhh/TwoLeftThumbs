@@ -1,6 +1,6 @@
 .askQuestion_container {
 	display: flex;
-	width: 25%;
+	width: 100%;
 	align-items: center;
 	justify-content: center;
 	justify-content: space-evenly;
@@ -12,7 +12,7 @@
 	justify-content: center;
 	align-items: center;
 	color: linen;
-	width: 55%;
+	width: 35%;
 	height: 30px;
 	text-decoration: none;
 	border-radius: 0.25rem;
@@ -38,8 +38,7 @@
 	padding: 5%;
 	border-top: 1px solid black;
 }
-
-.question_container > * {
+*/ .question_container > * {
 	margin: 1%;
 }
 
@@ -48,19 +47,16 @@
 }
 
 .noQuestionContainer {
-	color: rgb(63, 177, 52);
-	background-color: rgba(135, 118, 118, 0.15);
-	backdrop-filter: blur(4.5px);
+	width: 60%;
+	background-color: white;
 	display: flex;
-	align-self: center;
-	flex-direction: column;
+	align-items: center;
 	justify-content: center;
-	width: 50vh;
-	height: 10vh;
-	margin: 10% 30%;
-	border: 3px solid black;
+	flex-direction: column;
+	padding: 10px;
+	border: 3px solid rgb(167, 3, 3);
 	border-radius: 15px;
-	padding: 10px 10px 10px 100px;
-	text-decoration: none;
-	font-size: 20px;
+	margin-top: 16%;
+	margin-bottom: 10px;
+	margin-left: 19%;
 }

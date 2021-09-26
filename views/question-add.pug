@@ -1,35 +1,35 @@
 extends layout.pug
 
 block content
-  .page_title_container
-  h2#ask_a_question Ask a question
-  .errors_container
-  .ask_question_body_container
-    .ask_question_container
-      form.add_question(action=`/questions` method='post')
-        input(type='hidden' name='_csrf' value=csrfToken)
-        .question_title_container
-          label(for="title")= "Title"
-            p#title_description Be specific and imagine you’re asking a question to another person
-          input(type="text" id="title_input" name="title" value="What's your gaming question?")
-        .question_body_container
-          label(for="body")= "Body"
-            h2#title_description Include all the information someone would need to answer your question
-          textarea(id="body" name="body" value=question.body)
-        div(class='ask_question_buttons_container')
-          button(type='submit' class='submit_button') Add Question
-          a(href=`/questions` class='cancel_button') Cancel
-        script(src="/javascripts/addquestion.js")
-    .sideboxes_container
-      .question_instructions_container
-        .question_step_container
-          h2#question_step Step 1: Draft you question
-        .question_step_description_container
-          p#question_step_description The community is here to help you with questions about gaming. Provide details and share research with your question.
-      .helpful_links_container
-        .helpful_link_box
+  div.page_title_container
+    h2#ask_a_question Ask a question
+    .errors_container
+    .ask_question_body_container
+      .ask_question_container
+        form.add_question(action=`/questions` method='post')
+          input(type='hidden' name='_csrf' value=csrfToken)
+          .question_title_container
+            label(for="title")= "Title"
+             p#title_description Be specific and imagine you’re asking a question to another person
+            input(type="text" id="title_input" name="title" placeholder="What's your gaming question?")
+          .question_body_container
+            label(for="body")= "Body"
+              h2#title_description Include all the information someone would need to answer your question
+            textarea(id="body" name="body" value=question.body)
+          div(class='ask_question_buttons_container')
+            button(type='submit' class='submit_button') Add Question
+            a(href=`/questions` class='cancel_button') Cancel
+          script(src="/javascripts/addquestion.js")
+      .sideboxes_container
+        .question_instructions_container
+          .question_step_container
+            h2#question_step Step 1: Draft you question
+          .question_step_description_container
+            p#question_step_description The community is here to help you with questions about gaming. Provide details and share research with your question.
+        .helpful_links_container
+          .helpful_link_box
           h2#link_box_title Helpful links
-        .help_links
+          .help_links
           h4.good_question Find more information about
             a(class='good_questions_link' href='https://www.dummies.com/careers/find-a-job/interviews/ten-tips-for-asking-good-questions/')  how to to ask a good question here
           h4.lfg Find gamers to
