@@ -1,17 +1,22 @@
 .ask_question_body_container{
     display: flex;
     flex-direction: row;
-
+    justify-content: center;
 }
 
 .page_title_container {
-    height: 1.7em;
+    display: flex;
+    flex-direction: column;
+    height: 5em;
+    width: 37.5em;
+    margin-left: 16.2%;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 #ask_a_question {
+    color: white;
     font-size: 25px;
-    margin-bottom: 1.2em;
-    margin-left: 1em;
 }
 
 .ask_question_container {
@@ -46,7 +51,7 @@
     border-left: 1px solid rgb(194, 193, 193);
     border-bottom: 1px solid rgb(194, 193, 193);
     border-radius: 3px;
-    color: rgb(186, 183, 183);
+    color: rgb(94, 94, 94);
     padding-left: .7em;
 }
 
@@ -77,7 +82,7 @@
 
 .submit_button{
     color: white;
-    background-color: rgb(167, 3, 3);
+    background-color: rgb(181, 0, 0);
     margin-left: .6em;
     width: 9em;
     height: 2.75em;
@@ -85,7 +90,7 @@
 }
 
 .submit_button:hover{
-    background-color: rgb(167, 3, 3);
+    background-color: rgb(148, 3, 3);
 }
 
 .cancel_button{
@@ -96,7 +101,7 @@
 }
 
 .cancel_button:hover{
-    color: rgb(5, 95, 183);
+    color: rgb(165, 11, 11);
 }
 
 .sideboxes_container{

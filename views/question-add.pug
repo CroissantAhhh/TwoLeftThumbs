@@ -2,8 +2,8 @@ extends layout.pug
 
 block content
   .page_title_container
-  h2#ask_a_question Ask a question
-  .errors_container
+    h2#ask_a_question Ask a question
+    .errors_container
   .ask_question_body_container
     .ask_question_container
       form.add_question(action=`/questions` method='post')
@@ -11,7 +11,7 @@ block content
         .question_title_container
           label(for="title")= "Title"
             p#title_description Be specific and imagine you’re asking a question to another person
-          input(type="text" id="title_input" name="title" value="What's your gaming question?")
+          input(type="text" id="title_input" name="title" placeholder="What's your gaming question?")
         .question_body_container
           label(for="body")= "Body"
             h2#title_description Include all the information someone would need to answer your question
