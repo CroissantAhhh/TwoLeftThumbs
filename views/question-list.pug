@@ -1,21 +1,25 @@
 extends layout.pug
 
 block content
-    if questions.length
-        div.questions_container
-            h2.questions_title Questions
-            .askQuestion_container
-                .askQuestion_btn Ask Question
-            each question in questions
-                div.question_container
-                    h3.question_votes Votes: #{question.votes}
-                    h3.question_answers Answers: #{question.answers}
-                    a(href=`/questions/${question.id}`) #{question.title}
-        .askQuestion_container
-            .askQuestion_btn Ask Question
-        script(src="/javascripts/questionlist.js")
+    .question_list_body
+        if questions.length
+            .questions_container
+                .askQuestion_container
+                    h2.questions_title Questions
+                    .askQuestion_btn Ask Question
+                each question in questions
+                    .result_container
+                        .question_votes_container
+                            h3.question_votes_number  #{question.votes}
+                            h3.question_votes votes
+                        .question_answers_container
+                            h3.question_answers_number #{question.answers}
+                            h3.question_answers answers
+                        .each_question
+                            a(id="question" href=`/questions/${question.id}`) #{question.title}
+                script(src="/javascripts/questionlist.js")
 
-    else
-        div.noQuestionContainer
-            p.noQuestion Question not found
-        link(rel='stylesheet' href='/stylesheets/question-list.css')
+        else
+            .noQuestionContainer
+                p.noQuestion Question not found
+    link(rel='stylesheet' href='/stylesheets/question-list.css')
