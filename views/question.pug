@@ -14,7 +14,7 @@ block content
         .questionPage_middle
             .questionTitle_container
                 h2 #{question.title}
-                .askQuestion_btn Ask Question
+                a(href="/questions/add").askQuestion_btn Ask Question
             .questionBody_container
                 .questionVote_container
                     if voted.question === 1
