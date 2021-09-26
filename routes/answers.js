@@ -10,13 +10,10 @@ const router = express.Router();
 router.post(
   "/",
   csrfProtection,
-  answerValidators,
+  // answerValidators,
   asyncHandler(async (req, res) => {
     const { body, questionId } = req.body;
     const { userId } = req.session.auth;
-
-    console.log(req.body);
-
     const answer = await db.Answer.build({
       body,
       userId,
@@ -56,20 +53,45 @@ router.delete(
     const answer = await db.Answer.findByPk(id);
     const questionId = answer.questionId;
     answer.destroy();
-    res.status(200).json()
+    res.status(200).json();
   })
 );
 
 router.put(
   "/:id",
   csrfProtection,
+  requireAuth,
+  answerValidators,
   asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id, 10);
-    const { body } = req.body;
+    const {body} = req.body;
     const answer = await db.Answer.findByPk(id);
-    answer.body = body;
-    await answer.save();
-    res.redirect(`/questions/${answer.questionId}`);
+
+    let errors = [];
+    const validatorErrors = validationResult(req);
+
+    if (validatorErrors.isEmpty()) {
+      answer.body = body;
+      await answer.save();
+      res.status(200).json();
+    } else {
+      errors = validatorErrors.array().map((error) => error.msg);
+      res.status(401).json({
+        body,
+        errors,
+        csrfToken: req.csrfToken(),
+      });
+    }
+  })
+);
+
+router.get(
+  "/:id/edit",
+  csrfProtection,
+  asyncHandler(async (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const answer = await db.Answer.findByPk(id);
+    res.render("answer-edit", { answer, csrfToken: req.csrfToken() });
   })
 );
 

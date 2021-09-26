@@ -46,6 +46,32 @@ answerDownVote.forEach((answer) => {
   });
 });
 
+answerDelete.forEach((answer) => {
+  answer.addEventListener("click", async (e) => {
+    id = e.target.dataset.id;
+    const questionId = questionUpVote.dataset.id;
+    const body = { _csrf };
+    let res = await fetch(`/answers/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    if (res.status === 200) {
+      window.location.href = `/questions/${questionId}`;
+    }
+  });
+});
+
+answerEdit.forEach((answer) => {
+  answer.addEventListener("click", async (e) => {
+    console.log(e.target)
+    id = e.target.dataset.id;
+    const res = await fetch(`/answers/${id}/edit`)
+  });
+});
+
 questionUpVote.addEventListener("click", async (e) => {
   const id = e.target.dataset.id;
   const body = { id, dir: 1 };
@@ -88,22 +114,4 @@ questionDelete.addEventListener("click", async (e) => {
   if (res.status === 200) {
     window.location.href = "/questions";
   }
-});
-
-answerDelete.forEach((answer) => {
-  answer.addEventListener("click", async (e) => {
-    id = e.target.dataset.id;
-    const questionId = questionUpVote.dataset.id;
-    const body = { _csrf };
-    let res = await fetch(`/answers/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-    if (res.status === 200) {
-      window.location.href = `/questions/${questionId}`;
-    }
-  });
 });

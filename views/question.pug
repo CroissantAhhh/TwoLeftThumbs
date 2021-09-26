@@ -56,7 +56,7 @@ block content
                     .answerBody_text #{answer[0].body}
                         if locals.user.id === answer[0].userId
                             div.question_options
-                                .answer_edit(data-id=`${answer[0].id}`) Edit
+                                a(href=`/answers/${answer[0].id}/edit`).answer_edit Edit
                                 .answer_delete(data-id=`${answer[0].id}`) Delete
 
             form.add_answer(action=`/answers` method='post')

@@ -1,0 +1,17 @@
+extends layout.pug
+
+
+block content
+    .editForm_container
+        .errors_container.hidden
+        form.add_answer(action=`/answers` method='post' name="edit" data-id=answer.id)
+            input(type='hidden' name='_csrf', value=csrfToken)
+            input(type='hidden' name='questionId', value=answer.questionId)
+            .yourAnswer_container
+                div
+                    h2 Edit Answer
+                textarea(id="body" name="body")
+            .addAnswerBtn_container
+                button(type='submit' class='addAnswer_btn') Update
+    link(rel='stylesheet' href='/stylesheets/question-edit.css')
+    script(src="/javascripts/question-edit.js")
