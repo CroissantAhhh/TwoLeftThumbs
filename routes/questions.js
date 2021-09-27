@@ -22,6 +22,13 @@ router.get(
 	"/",
 	requireAuth,
 	asyncHandler(async (req, res) => {
+		const topQuestions = await db.Question.findAll({ include: ["answers"] });
+		topQuestions.sort((a, b) => b.answers.length - a.answers.length);
+		let top10Questions = [];
+		for (let i = 0; i < 10; i++) {
+			top10Questions = [...top10Questions, topQuestions[i]];
+		}
+
 		const questions = await db.Question.findAll({
 			include: ["answers", "votes"],
 		});
@@ -34,7 +41,7 @@ router.get(
 			question.answers = question.answers.length;
 		});
 		questions.sort((a, b) => b.votes - a.votes);
-		res.render("question-list", { title: "Questions", questions });
+		res.render("question-list", { title: "Questions", questions, top10Questions });
 	})
 );
 

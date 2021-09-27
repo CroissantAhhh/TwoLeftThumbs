@@ -1,26 +1,54 @@
 extends layout.pug
 
 block content
-    .question_list_body
-        if questions.length
-            .questions_container
-                .askQuestion_container
-                    h2.questions_title Questions
-                    a(href=`questions/add`).askQuestion_btn Ask Question
-                each question in questions
-                    .result_container
-                        .question_votes_container
-                            h3.question_votes_number  #{question.votes}
-                            h3.question_votes votes
-                        .question_answers_container
-                            h3.question_answers_number #{question.answers}
-                            h3.question_answers answers
-                        .each_question
-                            a(id="question" href=`/questions/${question.id}`) #{question.title}
-        else
-            .noQuestionContainer
-                p.noQuestion No Results Found
-                div.noQuestion_Btn_Container
-                    a(href="/questions").askQuestion_btn Back
+    .questionPage_container
+        .questionPage_left
+            .questionPageLeftLinks_container
+                .questionPage_home
+                    a(href="/") Home
+                .questionPage_about
+                    a(href="/about") About
+                .questionPage_team
+                    a(href="/team") Meet The Team
+        .question_list_body
+            if questions.length
+                .questions_container
+                    .askQuestion_container
+                        h2.questions_title Questions
+                        a(href=`questions/add`).askQuestion_btn Ask Question
+                    each question in questions
+                        .result_container
+                            .question_votes_container
+                                h3.question_votes_number  #{question.votes}
+                                h3.question_votes votes
+                            .question_answers_container
+                                h3.question_answers_number #{question.answers}
+                                h3.question_answers answers
+                            .each_question
+                                a(id="question" href=`/questions/${question.id}`) #{question.title}
+            else
+                .noQuestionContainer
+                    p.noQuestion No Results Found
+                    div.noQuestion_Btn_Container
+                        a(href="/questions").askQuestion_btn Back
+        .questionPage_right
+            .screenShot_container
+                .screenShot_title
+                    h3 Screenshot of the Week
+                .screenShot_img
+                    a(href="https://i.stack.imgur.com/Um7GV.jpg")
+                        img(src="https://i.stack.imgur.com/Um7GV.jpg", alt="")
+                .screenShot_text
+                    h3
+                        strong Cuddling my beloved winged partner Phosphor from Immortals Fenyx Rising
+                        |  by pinckerman
+            if top10Questions
+                .topQuestions_container
+                    .topQuestions_title
+                        h3 Top Questions
+                    each question in top10Questions
+                        .topQuestions_links
+                            .topQuestions_voteCount #{question.answers.length}
+                            a(href=`/questions/${question.id}`) #{question.title}
     link(rel='stylesheet' href='/stylesheets/question-list.css')
     script(src="/javascripts/questionlist.js")
