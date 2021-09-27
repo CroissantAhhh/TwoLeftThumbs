@@ -1,3 +1,6 @@
+const errorsContainer = document.querySelector(".errors_container");
+const bodyInput = document.querySelector("#body");
+const titleInput = document.querySelector("#title_input");
 const form = document.querySelector(".add_question");
 
 form.addEventListener("submit", async (e) => {
@@ -6,14 +9,14 @@ form.addEventListener("submit", async (e) => {
   const title = formData.get("title");
   const body = formData.get("body");
   const _csrf = formData.get("_csrf");
-  const JSONbody = { title, body, _csrf };
+
 
   let res = await fetch("/questions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(JSONbody),
+    body: JSON.stringify({ title, body, _csrf }),
   });
 
 
@@ -25,11 +28,9 @@ form.addEventListener("submit", async (e) => {
 
   if (res.status >= 400 && res.status < 600) {
     const data = await res.json();
-    const titleInput = document.querySelector("#title");
     titleInput.value = data.title;
-    const bodyInput = document.querySelector("#body");
-    bodyInput.value = data.body
-    const errorsContainer = document.querySelector(".errors_container");
+    bodyInput.value = data.body;
+    errorsContainer.classList.remove('hidden')
     let errorsHtml = [
       `
         <div class="alert alert-danger">
