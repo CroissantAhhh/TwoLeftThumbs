@@ -97,19 +97,21 @@ questionDownVote.addEventListener("click", async (e) => {
   const questionId = questionUpVote.dataset.id;
   window.location.href = `/questions/${questionId}`;
 });
+if (questionDelete) {
 
-questionDelete.addEventListener("click", async (e) => {
-  const id = e.target.dataset.id;
-  const body = { _csrf };
-  const res = await fetch(`/questions/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
+  questionDelete.addEventListener("click", async (e) => {
+    const id = e.target.dataset.id;
+    const body = { _csrf };
+    const res = await fetch(`/questions/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (res.status === 200) {
+      window.location.href = "/questions";
+    }
   });
-
-  if (res.status === 200) {
-    window.location.href = "/questions";
-  }
-});
+}
