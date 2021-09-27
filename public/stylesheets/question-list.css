@@ -1,3 +1,9 @@
+a {
+  text-decoration: none;
+  color: rgb(167, 3, 3);
+  padding: 10px;
+}
+
 .questionPage_container {
   display: flex;
   width: 100%;
@@ -18,9 +24,12 @@
 
 .questionPageLeftLinks_container {
   width: 95%;
+  text-decoration: none;
+  color: rgb(148, 3, 3);
 }
 
 .questionPage_home {
+  text-decoration: none;
   width: 100;
   display: flex;
   justify-content: center;
@@ -28,6 +37,7 @@
 }
 
 .questionPage_about {
+  text-decoration: none;
   width: 100;
   display: flex;
   justify-content: center;
@@ -35,6 +45,7 @@
 }
 
 .questionPage_team {
+  text-decoration: none;
   width: 100;
   display: flex;
   justify-content: center;
