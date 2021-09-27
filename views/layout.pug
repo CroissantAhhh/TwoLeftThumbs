@@ -14,6 +14,7 @@ html
             i(class="fa fa-search" aria-hidden="true")
         .nav_links
           if locals.authenticated
+            .nav_user #{locals.user.userName}
             form#authenticated(action='/users/logout' method='post' data-authenticated=`${locals.authenticated}`)
               button.nav_logout Logout
           else
