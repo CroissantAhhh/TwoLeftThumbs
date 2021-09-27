@@ -15,7 +15,6 @@ answerUpVote.forEach((answer) => {
   answer.addEventListener("click", async (e) => {
     e.stopPropagation();
     const id = e.target.dataset.id;
-    console.log(id);
     const body = { id, dir: 1 };
     const res = await fetch(`/votes/${id}`, {
       method: "POST",
@@ -66,7 +65,6 @@ answerDelete.forEach((answer) => {
 
 answerEdit.forEach((answer) => {
   answer.addEventListener("click", async (e) => {
-    console.log(e.target)
     id = e.target.dataset.id;
     const res = await fetch(`/answers/${id}/edit`)
   });
