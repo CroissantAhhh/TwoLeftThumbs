@@ -86,6 +86,7 @@ router.post(
       body,
     });
 
+	let errors = []
     const validatorErrors = validationResult(req);
 
     if (validatorErrors.isEmpty()) {
@@ -99,8 +100,8 @@ router.post(
       await vote.save();
       res.status(201).json();
     } else {
-      const errors = validatorErrors.array().map((error) => error.msg);
-      res.status(401).json("question-add", {
+      errors = validatorErrors.array().map((error) => error.msg);
+      res.status(401).json({
         title,
         body,
         errors,
