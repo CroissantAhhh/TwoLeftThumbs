@@ -69,6 +69,16 @@ nav input {
   border-radius: 0.25rem;
 }
 
+.nav_links div {
+  display: inline-flex;
+  width: 45%;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  color: linen;
+}
+
 .nav_login {
   background-color: linen;
   color: rgb(167, 3, 3);
