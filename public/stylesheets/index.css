@@ -29,49 +29,64 @@ h1 {
 	font: 17px "Lucida Grande", Helvetica, Arial, sans-serif;
 } */
 h1 {
-  font-size: 50px;
+	font-size: 50px;
 }
 
 h2 {
-  font-size: 30px;
+	font-size: 30px;
 }
 
 a {
-  text-decoration: none;
-  color: rgb(167, 3, 3);
+	text-decoration: none;
+	color: rgb(167, 3, 3);
 }
 
 .welcomePage_container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .welcomePage_content {
-  width: 70%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+	width: 70%;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
 }
 
 .welcomePage_discription {
-  width: 90%;
+	width: 90%;
 }
 
 .welcomePage_discription div {
-  border-bottom: 1px solid rgba(59, 54, 54, 0.233);
-  padding: 20px;
+	border-bottom: 1px solid rgba(59, 54, 54, 0.233);
+	padding: 20px;
 }
 
 .welcomePage_img {
-  width: 60%;
+	width: 60%;
 }
 
 .welcomePage_img img {
-  width: 100%;
-  padding: 40px;
+	width: 100%;
+	padding: 40px;
+}
+
+.fade-in {
+	animation: fadeIn 2s;
+	opacity: 1;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
