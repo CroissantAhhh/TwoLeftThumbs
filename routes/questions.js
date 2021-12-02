@@ -32,6 +32,7 @@ router.get(
     const questions = await db.Question.findAll({
       include: ["answers", "votes"],
     });
+    console.log(questions);
     questions.forEach((question) => {
       let voteSum = 0;
       for (let vote of question.votes) {
@@ -40,6 +41,7 @@ router.get(
       question.votes = voteSum;
       question.answers = question.answers.length;
     });
+    console.log(questions);
     questions.sort((a, b) => b.votes - a.votes);
     res.render("question-list", {
       title: "Questions",
