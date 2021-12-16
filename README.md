@@ -88,57 +88,47 @@ Two Left Thumbs is a question and answer site for passionate videogamers on all 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-1. Clone this repository (only this branch)
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/AftonSlone/howl.git
    ```
-
-2. Install dependencies
-
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
-
+   
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+   
 3. Create a **.env** file based on the example with proper settings for your
    development environment
+   
 4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
-
-   ```bash
-   pipenv shell
-   ```
-
-   ```bash
-   flask db upgrade
-   ```
-
-   ```bash
-   flask seed all
-   ```
-
-   ```bash
-   flask run
-   ```
-
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
-
-
-## *IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
-
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-## *ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-
+5. Run database migrations
+  ```sh
+  npx sequelize-cli db:migrate
+  ```
+  
+  6. Seed database
+  ```sh
+  npx sequelize-cli db:seed:all
+  ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
 
@@ -150,11 +140,11 @@ Signup for a new account, or login to a pre existing account.
 <img src="https://i.imgur.com/0PM1Sgb.png" alt="" width="900" height="450">
 
 
-Post a new image to your account.
+Post a new gaming related question.
 
 <img src="https://i.imgur.com/6RJyuYm.png" alt="" width="500" height="600">
 
-Feel free to like or comment on a followers images
+Feel free to like, comment upvote or downvote
 
 <img src="https://i.imgur.com/R7ITidH.png" alt="" width="500" height="750">
 
