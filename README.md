@@ -137,16 +137,19 @@ This is an example of how to list things you need to use the software and how to
 
 Signup for a new account, or login to a pre existing account. 
 
-<img src="https://i.imgur.com/0PM1Sgb.png" alt="" width="900" height="450">
+<img src="https://i.imgur.com/0s4UFvs.png" alt="" width="900" height="450">
+
 
 
 Post a new gaming related question.
 
-<img src="https://i.imgur.com/6RJyuYm.png" alt="" width="500" height="600">
+<img src="https://i.imgur.com/DRHXZQB.png" alt="" width="900" height="450">
+
 
 Feel free to like, comment upvote or downvote
 
-<img src="https://i.imgur.com/R7ITidH.png" alt="" width="500" height="750">
+<img src="https://i.imgur.com/M2NlsQj.png" alt="" width="900" height="750">
+
 
 
 
