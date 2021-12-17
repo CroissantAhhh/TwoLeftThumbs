@@ -193,9 +193,15 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Afton Slone Jr - [@AftonSlone](https://twitter.com/AftonSlone) - [Linkedin](https://www.linkedin.com/in/afton-slone/)
+Afton Slone Jr - [@AftonSlone](https://twitter.com/AftonSlone) - [Linkedin](https://www.linkedin.com/in/afton-slone/) - [GitHub](https://github.com/AftonSlone)
+</br>
+Adam Guan - [Linkedin](https://www.linkedin.com/in/adam-g-86922aa0/) - [GitHub](https://github.com/AdamHGuanu)
+</br>
+Victor Hou - [GitHub](https://github.com/Thereal-victorhou)
+</br>
+Jason Zhou - [Linkedin](https://www.linkedin.com/in/jazon-zhou/) - [GitHub](https://github.com/CroissantAhhh)
 
-Project Link: [https://foodstagram-aa.herokuapp.com/login](https://foodstagram-aa.herokuapp.com/login)
+Project Link: [https://two-left-thumbs.herokuapp.com](https://two-left-thumbs.herokuapp.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
