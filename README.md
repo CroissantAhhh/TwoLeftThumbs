@@ -104,7 +104,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/AftonSlone/howl.git
+   git clone https://github.com/CroissantAhhh/TwoLeftThumbs.git
    ```
    
 2. Install NPM packages
@@ -153,7 +153,7 @@ Feel free to like, comment upvote or downvote
 
 
 
-_For more examples, please refer to the [Documentation](https://github.com/KristyCS/Foodstagram/wiki)_
+_For more examples, please refer to the [Documentation](https://github.com/CroissantAhhh/TwoLeftThumbs/wiki)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
