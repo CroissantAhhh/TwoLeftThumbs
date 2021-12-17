@@ -16,7 +16,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/CroissantAhhh/TwoLeftThumbs">
     <img src="https://i.imgur.com/mCGl69Y.png" alt="Logo" width="280" height="80">
     
   </a>
@@ -195,7 +195,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Afton Slone Jr - [@AftonSlone](https://twitter.com/AftonSlone) - [Linkedin](https://www.linkedin.com/in/afton-slone/) - [GitHub](https://github.com/AftonSlone)
 </br>
-Adam Guan - [Linkedin](https://www.linkedin.com/in/adam-g-86922aa0/) - [GitHub](https://github.com/AdamHGuanu)
+Adam Guan - [Linkedin](https://www.linkedin.com/in/adam-g-86922aa0/) - [GitHub](https://github.com/AdamHGuan)
 </br>
 Victor Hou - [GitHub](https://github.com/Thereal-victorhou)
 </br>
