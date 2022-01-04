@@ -197,7 +197,7 @@ Afton Slone Jr - [@AftonSlone](https://twitter.com/AftonSlone) - [Linkedin](http
 </br>
 Adam Guan - [Linkedin](https://www.linkedin.com/in/adam-g-86922aa0/) - [GitHub](https://github.com/AdamHGuan)
 </br>
-Victor Hou - [GitHub](https://github.com/Thereal-victorhou)
+Victor Hou - [Linkedin](https://www.linkedin.com/in/victor-hou-a77b3a223/) - [GitHub](https://github.com/Thereal-victorhou)
 </br>
 Jason Zhou - [Linkedin](https://www.linkedin.com/in/jazon-zhou/) - [GitHub](https://github.com/CroissantAhhh)
 
